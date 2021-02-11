@@ -48,3 +48,6 @@ admin.site.register(educationModel)
 admin.site.register(educationalModalContent)
 admin.site.register(nonDiscriminationPolicy)
 admin.site.register(mainCampus)
+
+admin.site.register(requirementHeader)
+admin.site.register(requirementContent)

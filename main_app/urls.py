@@ -8,7 +8,6 @@ urlpatterns = [
     
     path('',views.index),
     path('index',views.index),
-    path('about',views.about),
     path('visionMission',views.visionMission),
     path('chancellorsMessage',views.chancellorMessag),
     path('faculty',views.facultys),
@@ -27,7 +26,8 @@ urlpatterns = [
     path('accreditation',views.accreditation),
     path('describingAccreditation',views.describingAccreditations),
     path('afterGraduationServices',views.afterGraduationServicesFunction),
-    path('educationModel',views.educationModels)
+    path('educationModel',views.educationModels),
+    path('404',views.notFound)
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

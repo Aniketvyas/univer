@@ -5,6 +5,7 @@ from django.db.models import Subquery
 import datetime
 from django.core.mail import send_mail
 from django.conf import settings
+from django.core.paginator import Paginator
 from django.contrib.auth.models import User , auth
 from django.contrib import messages
 # Create your views here.
@@ -12,63 +13,112 @@ from django.contrib import messages
 
 def index(request):
     education = educationalOffering.objects.all()
+    spec = specialization.objects.all()
+    programs = degreeProgram.objects.all()
     news = newsAndUpdates.objects.all()
     images = homeSlider.objects.all()
     testimonial = testimonials.objects.all()
     academy=academyWorks.objects.all()
-    return render(request,'index.html',{'educationalOffering':education,'academy':academy,'news':news,'images':images,'testimonial':testimonial})
+    mainList=[]
+    mainList1 = []
+    for i in education:
+        dictionaryList , dictionaryTab = {},{}
+        prog = degreeProgram.objects.filter(educationalOffering=education)
+        dictionaryList = {
+            'program':education,
+            'degrees':prog
+        }
+        dictionaryTab = {
+            'degrees':prog
+        }
+        mainList.append(dictionaryList)
+        mainList1.append(dictionaryTab)
+    return render(request,'index.html',{'mainList1':mainList1,'mainList':mainList,'spec':spec,'degree':programs,'educationalOffering':education,'academy':academy,'news':news,'images':images,'testimonial':testimonial})
 
-def about(request):
-    return render(request,'about.html')
 
 def visionMission(request):
     education = educationalOffering.objects.all()
     vision = visionAndMission.objects.get(category="VISION")
     mission = visionAndMission.objects.get(category="MISSION")
-    return render(request,'visionMission.html',{'vision':vision,'mission':mission,'educationalOffering':education})
+    spec = specialization.objects.all()
+    program = degreeProgram.objects.all()
+    return render(request,'visionMission.html',{'spec':spec,'degree':program,'vision':vision,'mission':mission,'educationalOffering':education,'spec':spec})
 
 def chancellorMessag(request):
     education = educationalOffering.objects.all()
     chancellorMessages = chancellorMessage.objects.all()
-    return render(request,'chancellorsMessage.html',{'data':chancellorMessages,'educationalOffering':education})
+    spec = specialization.objects.all()
+    program = degreeProgram.objects.all()
+    return render(request,'chancellorsMessage.html',{'spec':spec,'degree':program,'data':chancellorMessages,'educationalOffering':education})
 
 
 def facultys(request):
     education = educationalOffering.objects.all()
     f = faculty.objects.all()
-    return render(request,'faculty.html',{'faculties':f,'educationalOffering':education})
+    spec = specialization.objects.all()
+    program = degreeProgram.objects.all()
+    return render(request,'faculty.html',{'faculties':f,'educationalOffering':education,'spec':spec,'degree':program})
 
 def departments(request):
-    return render(request,'404.html')
+    try:
+        spec = specialization.objects.all()
+        program = degreeProgram.objects.all()
+        return render(request,'departments.html',{'spec':spec,'degree':program})
+    except:
+        return redirect('/404')
+
+
+
 def thesisPolicys(request):
     education = educationalOffering.objects.all()
     t = thesisPolicy.objects.all()
-    return render(request,'thesisPolicy.html',{'thesis':t,'educationalOffering':education})
+    spec = specialization.objects.all()
+    program = degreeProgram.objects.all()
+    return render(request,'thesisPolicy.html',{'thesis':t,'educationalOffering':education,'spec':spec,'degree':program})
 
 
 def gradingSystems(request):
+    education = educationalOffering.objects.all()
     grades = gradeTable.objects.all()
     thesis = thesisEvaluation.objects.all()
-    return render(request,'gradingSystem.html',{'grades':grades,'thesisEvaluation':thesis})
+    spec = specialization.objects.all()
+    program = degreeProgram.objects.all()
+    return render(request,'gradingSystem.html',{'grades':grades,'educationalOffering':education,'thesisEvaluation':thesis,'spec':spec,'degree':program})
 
 def requirement(request):
+    spec = specialization.objects.all()
+    program = degreeProgram.objects.all()
     education = educationalOffering.objects.all()
-    return render(request,'requirement.html',{'educationalOffering':education})
+    header = requirementHeader.objects.all()
+    mainList=[]
+    for i in header:
+        dictionary = {}
+        content = requirementContent.objects.filter(header=i)
+        dictionary={'header':i,'content':content}
+        mainList.append(dictionary)
+    print(mainList)
+    return render(request,'requirement.html',{'educationalOffering':education,'spec':spec,'degree':program,'data':mainList})
 
 def refundPolicy(request):
+    spec = specialization.objects.all()
+    program = degreeProgram.objects.all()
     education = educationalOffering.objects.all()
     steps = refundSteps.objects.all()
     charges= refundCharges.objects.all()
-    return render(request,'refundPolicy.html',{'educationalOffering':education,'steps':steps,'charges':charges})
+    return render(request,'refundPolicy.html',{'educationalOffering':education,'steps':steps,'charges':charges,'spec':spec,'degree':program})
 
 def nonDiscriminationPolicys(request):
+    spec = specialization.objects.all()
+    program = degreeProgram.objects.all()
     education = educationalOffering.objects.all()
     policies = nonDiscriminationPolicy.objects.all()
-    return render(request,'nonDiscriminationPolicy.html',{'educationalOffering':education,'policies':policies})
+    return render(request,'nonDiscriminationPolicy.html',{'educationalOffering':education,'policies':policies,'spec':spec,'degree':program})
 
 
 
 def education(request,id):
+    spec = specialization.objects.all()
+    program = degreeProgram.objects.all()
     education = educationalOffering.objects.get(id=id)
     course= degreeProgram.objects.filter(educationalOffering = education)
     educationDegree = educationalOffering.objects.all()
@@ -88,6 +138,7 @@ def education(request,id):
                 'acceptanceCriteria':acceptanceCriteria,
                 'nominationConsideration':nominationConsideratio,
                 'educationalOffering':educationDegree,
+                'spec':spec,'degree':program
                 
             }
             return render(request,'test.html',context)
@@ -109,24 +160,32 @@ def education(request,id):
                 'mainList':mainList,
                 'courses': course,
                 'acceptancePolicies': acceptancePolicies,
-                'educationalOffering':educationDegree
+                'educationalOffering':educationDegree,
+                'spec':spec,'degree':program
             }
             return render(request,'test.html',context)
     
     else:
+        spec = specialization.objects.all()
+        program = degreeProgram.objects.all()
         context = {
-            'educationalOffering':educationDegree
+            'educationalOffering':educationDegree,
+            'spec':spec,'degree':program
         }
-        return render(request,'404.html',context)
+        return redirect('/404',context)
     
 
 def accreditation(request):
     education = educationalOffering.objects.all()
     para = accreditationParagraph.objects.all()[0]
     lists = accreditationList.objects.all()
-    return render(request,'accreditation.html',{'para':para,'lists':lists,'educationalOffering':education})
+    spec = specialization.objects.all()
+    program = degreeProgram.objects.all()
+    return render(request,'accreditation.html',{'para':para,'lists':lists,'educationalOffering':education,'spec':spec,'degree':program})
 
 def describingAccreditations(request):
+    spec = specialization.objects.all()
+    program = degreeProgram.objects.all()
     education = educationalOffering.objects.all()
     mainList=[]
     para = describingAccreditationParagraph.objects.filter(listAvailable=False)[0]
@@ -138,20 +197,27 @@ def describingAccreditations(request):
         dictionary['contentList'] = data     
         mainList.append(dictionary)
     print(mainList)
-    return render(request,'describingAccreditation.html',{'para':para,'lists':mainList,'educationalOffering':education})
+    return render(request,'describingAccreditation.html',{'para':para,'lists':mainList,'educationalOffering':education,'spec':spec,'degree':program})
 
 def afterGraduationServicesFunction(request):
+    spec = specialization.objects.all()
+    program = degreeProgram.objects.all()
     education = educationalOffering.objects.all()
     services = afterGraduationServices.objects.all()
-    return render(request,'afterGraduationServices.html',{'lists':services,'educationalOffering':education})
+    return render(request,'afterGraduationServices.html',{'lists':services,'educationalOffering':education,'spec':spec,'degree':program})
 
 
 def studentFilesPolicys(request):
+    spec = specialization.objects.all()
+    program = degreeProgram.objects.all()
     data = studentFiles.objects.all()
-    return render(request,'studentFilesPolicy.html',{'data':data})
+    education = educationalOffering.objects.all()
+    return render(request,'studentFilesPolicy.html',{'data':data,'spec':spec,'degree':program,'educationalOffering':education,})
 
 
 def educationModels(request):
+    spec = specialization.objects.all()
+    program = degreeProgram.objects.all()
     education = educationalOffering.objects.all()
     category = educationModel.objects.all().order_by('title')
     data1 = educationalModalContent.objects.filter(title=category[0])
@@ -180,21 +246,30 @@ def educationModels(request):
         'data3':data3,
         'education':education,
         'lol' : mainList,
-        'educationalOffering':education
+        'educationalOffering':education,
+        'spec':spec,'degree':program,
         }
     return render(request,'educationModel.html',context)
 
 
 def gallerys(request):
+    spec = specialization.objects.all()
+    program = degreeProgram.objects.all()
     galler = gallery.objects.all()
-    return render(request,'gallery.html',{'gallery':galler})
+    paginator = Paginator(galler,9)
+    page = request.GET.get('page')
+    galler = paginator.get_page(page)
+    ducation = educationalOffering.objects.all()
+    return render(request,'gallery.html',{'educationalOffering':ducation,'gallery':galler,'spec':spec,'degree':program,})
 
 def contact(request):
+    spec = specialization.objects.all()
+    program = degreeProgram.objects.all()
     data = accreditatedCenters.objects.all()
     centers = academicsCenters.objects.all()
     education = educationalOffering.objects.all()
     main = mainCampus.objects.all()
-    return render(request,'contact.html',{'accreditatedCenters':data,'centers':centers,'educationalOffering':education,'main':main})
+    return render(request,'contact.html',{'spec':spec,'degree':program,'accreditatedCenters':data,'centers':centers,'educationalOffering':education,'main':main})
 
 def contactQueryView(request):
     name = request.POST['name']
@@ -233,3 +308,7 @@ def login(request):
         else:
             messages.error(request,'bad credentials!!!')
             return redirect('/',{'error':True})
+
+
+def notFound(request):
+    return render(request,'404.html')

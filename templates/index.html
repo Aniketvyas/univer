@@ -16,7 +16,7 @@
 
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <!-- <link rel="stylesheet" href="test.css"> -->
-    <link rel="stylesheet" href="{% static 'css/rotator.css' %}">
+    <link rel="stylesheet" href="{% static 'css/test.css' %}">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
@@ -64,264 +64,265 @@
                 <span aria-hidden="true">&times;</span>
               </button>
                 </div>
-                <form>
+                <form method="POST" action="applyNow"> {% csrf_token %}
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="email1">Full Name</label>
-                            <input type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter Full Name">
+                            <input required type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter Full Name">
                         </div>
                         <div class="form-group">
                             <label for="email1">Email address</label>
-                            <input type="email" class="form-control" id="email1" aria-describedby="emailHelp" placeholder="Enter email">
+                            <input required type="email" class="form-control" id="email1" aria-describedby="emailHelp" placeholder="Enter email">
 
                         </div>
                         <div class="form-group">
                             <label for="email1">Phone Number</label>
                             <div class="form-row">
-                                <select class="custom-select">
+                                <select class="custom-select" required>
+                                    <option value="+52" >Mexico (+52) </li>
                                     <option value="+91" >India (+91) </li>
-                                                    <option value="+93" >Afghanistan (+93) </li>
-                                                    <option value="+355" >Albania (+355) </li>
-                                                    <option value="+213" >Algeria (+213) </li>
-                                                    <option value="+1684" >American Samoa (+1684) </li>
-                                                    <option value="+376" >Andorra (+376) </li>
-                                                    <option value="+244" >Angola (+244) </li>
-                                                    <option value="+1264" >Anguilla (+1264) </li>
-                                                    <option value="+61" >Australia (+61) </li>
-                                                    <option value="+1" >United States of America (+1) </li>
-                                                    <option value="+1268" >Antigua and Barbuda (+1268) </li>
-                                                    <option value="+54" >Argentina (+54) </li>
-                                                    <option value="+374" >Armenia (+374) </li>
-                                                    <option value="+297" >Aruba (+297) </li>
-                                                    <option value="+43" >Austria (+43) </li>
-                                                    <option value="+994" >Azerbaijan (+994) </li>
-                                                    <option value="+1242" >Bahamas (+1242) </li>
-                                                    <option value="+973" >Bahrain (+973) </li>
-                                                    <option value="+880" >Bangladesh (+880) </li>
-                                                    <option value="+1246" >Barbados (+1246) </li>
-                                                    <option value="+375" >Belarus (+375) </li>
-                                                    <option value="+1" >Canada (+1) </li>
-                                                    <option value="+32" >Belgium (+32) </li>
-                                                    <option value="+501" >Belize (+501) </li>
-                                                    <option value="+229" >Benin (+229) </li>
-                                                    <option value="+1441" >Bermuda (+1441) </li>
-                                                    <option value="+975" >Bhutan (+975) </li>
-                                                    <option value="+591" >Bolivia (+591) </li>
-                                                    <option value="+387" >Bosnia and Herzegovina (+387) </li>
-                                                    <option value="+267" >Botswana (+267) </li>
-                                                    <option value="+55" >Brazil (+55) </li>
-                                                    <option value="+246" >British Indian Ocean Territory (+246) </li>
-                                                    <option value="+1284" >British Virgin Islands (+1284) </li>
-                                                    <option value="+7" >Russian Federation (+7) </li>
-                                                    <option value="+359" >Bulgaria (+359) </li>
-                                                    <option value="+226" >Burkina Faso (+226) </li>
-                                                    <option value="+257" >Burundi (+257) </li>
-                                                    <option value="+855" >Cambodia (+855) </li>
-                                                    <option value="+237" >Cameroon (+237) </li>
-                                                    <option value="+238" >Cape Verde (+238) </li>
-                                                    <option value="+1345" >Cayman Islands (+1345) </li>
-                                                    <option value="+236" >Central African Republic (+236) </li>
-                                                    <option value="+235" >Chad (+235) </li>
-                                                    <option value="+56" >Chile (+56) </li>
-                                                    <option value="+86" >China (+86) </li>
-                                                    <option value="+47" >Svalbard and Jan Mayen (+47) </li>
-                                                    <option value="+61" >Cocos Islands (+61) </li>
-                                                    <option value="+57" >Colombia (+57) </li>
-                                                    <option value="+269" >Comoros (+269) </li>
-                                                    <option value="+682" >Cook Islands (+682) </li>
-                                                    <option value="+506" >Costa Rica (+506) </li>
-                                                    <option value="+385" >Croatia (+385) </li>
-                                                    <option value="+53" >Cuba (+53) </li>
-                                                    <option value="+357" >Cyprus (+357) </li>
-                                                    <option value="+420" >Czech Republic (+420) </li>
-                                                    <option value="+243" >Democratic Republic of The Congo (+243) </li>
-                                                    <option value="+45" >Denmark (+45) </li>
-                                                    <option value="+253" >Djibouti (+253) </li>
-                                                    <option value="+1767" >Dominica (+1767) </li>
-                                                    <option value="+1809" >Dominican Republic (+1809) </li>
-                                                    <option value="+64" >New Zealand (+64) </li>
-                                                    <option value="+670" >East Timor (+670) </li>
-                                                    <option value="+593" >Ecuador (+593) </li>
-                                                    <option value="+20" >Egypt (+20) </li>
-                                                    <option value="+503" >El Salvador (+503) </li>
-                                                    <option value="+240" >Equatorial Guinea (+240) </li>
-                                                    <option value="+291" >Eritrea (+291) </li>
-                                                    <option value="+372" >Estonia (+372) </li>
-                                                    <option value="+251" >Ethiopia (+251) </li>
-                                                    <option value="+500" >Falkland Islands (+500) </li>
-                                                    <option value="+298" >Faroe Islands (+298) </li>
-                                                    <option value="+679" >Fiji (+679) </li>
-                                                    <option value="+358" >Finland (+358) </li>
-                                                    <option value="+33" >France (+33) </li>
-                                                    <option value="+594" >French Guiana (+594) </li>
-                                                    <option value="+689" >French Polynesia (+689) </li>
-                                                    <option value="+241" >Gabon (+241) </li>
-                                                    <option value="+220" >Gambia (+220) </li>
-                                                    <option value="+995" >Georgia (+995) </li>
-                                                    <option value="+49" >Germany (+49) </li>
-                                                    <option value="+233" >Ghana (+233) </li>
-                                                    <option value="+350" >Gibraltar (+350) </li>
-                                                    <option value="+30" >Greece (+30) </li>
-                                                    <option value="+299" >Greenland (+299) </li>
-                                                    <option value="+1473" >Grenada (+1473) </li>
-                                                    <option value="+64" >Pitcairn (+64) </li>
-                                                    <option value="+1671" >Guam (+1671) </li>
-                                                    <option value="+502" >Guatemala (+502) </li>
-                                                    <option value="+441481" >Guernsey (+441481) </li>
-                                                    <option value="+224" >Guinea (+224) </li>
-                                                    <option value="+245" >Guinea (+245) </li>
-                                                    <option value="+592" >Guyana (+592) </li>
-                                                    <option value="+509" >Haiti (+509) </li>
-                                                    <option value="+504" >Honduras (+504) </li>
-                                                    <option value="+852" >Hong Kong (+852) </li>
-                                                    <option value="+36" >Hungary (+36) </li>
-                                                    <option value="+354" >Iceland (+354) </li>
-                                                    <option value="+62" >Indonesia (+62) </li>
-                                                    <option value="+98" >Iran (+98) </li>
-                                                    <option value="+964" >Iraq (+964) </li>
-                                                    <option value="+353" >Ireland (+353) </li>
-                                                    <option value="+441624" >Isle of Man (+441624) </li>
-                                                    <option value="+972" >Israel (+972) </li>
-                                                    <option value="+39" >Italy (+39) </li>
-                                                    <option value="+1876" >Jamaica (+1876) </li>
-                                                    <option value="+81" >Japan (+81) </li>
-                                                    <option value="+441534" >Jersey (+441534) </li>
-                                                    <option value="+962" >Jordan (+962) </li>
-                                                    <option value="+82" >Korea (South) (+82) </li>
-                                                    <option value="+254" >Kenya (+254) </li>
-                                                    <option value="+686" >Kiribati (+686) </li>
-                                                    <option value="+95" >Myanmar (+95) </li>
-                                                    <option value="+383" >Kosovo (+383) </li>
-                                                    <option value="+965" >Kuwait (+965) </li>
-                                                    <option value="+996" >Kyrgyzstan (+996) </li>
-                                                    <option value="+856" >Laos (+856) </li>
-                                                    <option value="+371" >Latvia (+371) </li>
-                                                    <option value="+961" >Lebanon (+961) </li>
-                                                    <option value="+266" >Lesotho (+266) </li>
-                                                    <option value="+231" >Liberia (+231) </li>
-                                                    <option value="+218" >Libya (+218) </li>
-                                                    <option value="+423" >Liechtenstein (+423) </li>
-                                                    <option value="+370" >Lithuania (+370) </li>
-                                                    <option value="+352" >Luxembourg (+352) </li>
-                                                    <option value="+853" >Macau (+853) </li>
-                                                    <option value="+389" >Macedonia (+389) </li>
-                                                    <option value="+261" >Madagascar (+261) </li>
-                                                    <option value="+265" >Malawi (+265) </li>
-                                                    <option value="+60" >Malaysia (+60) </li>
-                                                    <option value="+960" >Maldives (+960) </li>
-                                                    <option value="+223" >Mali (+223) </li>
-                                                    <option value="+356" >Malta (+356) </li>
-                                                    <option value="+692" >Marshall Islands (+692) </li>
-                                                    <option value="+596" >Martinique (+596) </li>
-                                                    <option value="+222" >Mauritania (+222) </li>
-                                                    <option value="+230" >Mauritius (+230) </li>
-                                                    <option value="+52" >Mexico (+52) </li>
-                                                    <option value="+691" >Micronesia (+691) </li>
-                                                    <option value="+373" >Moldova (+373) </li>
-                                                    <option value="+377" >Monaco (+377) </li>
-                                                    <option value="+976" >Mongolia (+976) </li>
-                                                    <option value="+382" >Montenegro (+382) </li>
-                                                    <option value="+1664" >Montserrat (+1664) </li>
-                                                    <option value="+212" >Western Sahara (+212) </li>
-                                                    <option value="+258" >Mozambique (+258) </li>
-                                                    <option value="+264" >Namibia (+264) </li>
-                                                    <option value="+674" >Nauru (+674) </li>
-                                                    <option value="+977" >Nepal (+977) </li>
-                                                    <option value="+31" >Netherlands (+31) </li>
-                                                    <option value="+225" >Ivory Coast (+225) </li>
-                                                    <option value="+687" >New Caledonia (+687) </li>
-                                                    <option value="+505" >Nicaragua (+505) </li>
-                                                    <option value="+227" >Niger (+227) </li>
-                                                    <option value="+234" >Nigeria (+234) </li>
-                                                    <option value="+683" >Niue (+683) </li>
-                                                    <option value="+242" >Republic of The Congo (+242) </li>
-                                                    <option value="+1670" >Northern Mariana Islands (+1670) </li>
-                                                    <option value="+262" >Reunion (+262) </li>
-                                                    <option value="+968" >Oman (+968) </li>
-                                                    <option value="+92" >Pakistan (+92) </li>
-                                                    <option value="+680" >Palau (+680) </li>
-                                                    <option value="+970" >Palestine (+970) </li>
-                                                    <option value="+507" >Panama (+507) </li>
-                                                    <option value="+675" >Papua New Guinea (+675) </li>
-                                                    <option value="+595" >Paraguay (+595) </li>
-                                                    <option value="+51" >Peru (+51) </li>
-                                                    <option value="+63" >Philippines (+63) </li>
-                                                    <option value="+48" >Poland (+48) </li>
-                                                    <option value="+351" >Portugal (+351) </li>
-                                                    <option value="+1939" >Puerto Rico (+1939) </li>
-                                                    <option value="+974" >Qatar (+974) </li>
-                                                    <option value="+290" >St. Helena (+290) </li>
-                                                    <option value="+40" >Romania (+40) </li>
-                                                    <option value="+379" >Vatican City State (Holy See) (+379) </li>
-                                                    <option value="+250" >Rwanda (+250) </li>
-                                                    <option value="+421" >Slovakia (+421) </li>
-                                                    <option value="+1869" >Saint Kitts and Nevis (+1869) </li>
-                                                    <option value="+1758" >Saint Lucia (+1758) </li>
-                                                    <option value="+508" >St. Pierre and Miquelon (+508) </li>
-                                                    <option value="+1784" >Saint Vincent and The Grenadines (+1784) </li>
-                                                    <option value="+685" >Samoa (+685) </li>
-                                                    <option value="+378" >San Marino (+378) </li>
-                                                    <option value="+239" >Sao Tome and Principe (+239) </li>
-                                                    <option value="+966" >Saudi Arabia (+966) </li>
-                                                    <option value="+221" >Senegal (+221) </li>
-                                                    <option value="+381" >Serbia (+381) </li>
-                                                    <option value="+248" >Seychelles (+248) </li>
-                                                    <option value="+232" >Sierra Leone (+232) </li>
-                                                    <option value="+65" >Singapore (+65) </li>
-                                                    <option value="+1721" >Sint Maarten (+1721) </li>
-                                                    <option value="+590" >Saint Martin (+590) </li>
-                                                    <option value="+386" >Slovenia (+386) </li>
-                                                    <option value="+677" >Solomon Islands (+677) </li>
-                                                    <option value="+252" >Somalia (+252) </li>
-                                                    <option value="+27" >South Africa (+27) </li>
-                                                    <option value="+211" >South Sudan (+211) </li>
-                                                    <option value="+34" >Spain (+34) </li>
-                                                    <option value="+94" >Sri Lanka (+94) </li>
-                                                    <option value="+599" >Netherlands Antilles (+599) </li>
-                                                    <option value="+249" >Sudan (+249) </li>
-                                                    <option value="+597" >Suriname (+597) </li>
-                                                    <option value="+672" >Norfolk Island (+672) </li>
-                                                    <option value="+268" >Swaziland (+268) </li>
-                                                    <option value="+46" >Sweden (+46) </li>
-                                                    <option value="+41" >Switzerland (+41) </li>
-                                                    <option value="+963" >Syria (+963) </li>
-                                                    <option value="+886" >Taiwan (+886) </li>
-                                                    <option value="+992" >Tajikistan (+992) </li>
-                                                    <option value="+255" >Tanzania (+255) </li>
-                                                    <option value="+66" >Thailand (+66) </li>
-                                                    <option value="+228" >Togo (+228) </li>
-                                                    <option value="+690" >Tokelau (+690) </li>
-                                                    <option value="+676" >Tonga (+676) </li>
-                                                    <option value="+1868" >Trinidad and Tobago (+1868) </li>
-                                                    <option value="+216" >Tunisia (+216) </li>
-                                                    <option value="+90" >Turkey (+90) </li>
-                                                    <option value="+993" >Turkmenistan (+993) </li>
-                                                    <option value="+1649" >Turks and Caicos Islands (+1649) </li>
-                                                    <option value="+688" >Tuvalu (+688) </li>
-                                                    <option value="+1340" >U.S. Virgin Islands (+1340) </li>
-                                                    <option value="+256" >Uganda (+256) </li>
-                                                    <option value="+380" >Ukraine (+380) </li>
-                                                    <option value="+971" >United Arab Emirates (+971) </li>
-                                                    <option value="+44" >United Kingdom (+44) </li>
-                                                    <option value="+673" >Brunei Darussalam (+673) </li>
-                                                    <option value="+598" >Uruguay (+598) </li>
-                                                    <option value="+581" >Us Minor Outlying Islands (+581) </li>
-                                                    <option value="+998" >Uzbekistan (+998) </li>
-                                                    <option value="+678" >Vanuatu (+678) </li>
-                                                    <option value="+681" >Wallis and Futuna Islands (+681) </li>
-                                                    <option value="+58" >Venezuela (+58) </li>
-                                                    <option value="+84" >Vietnam (+84) </li>
-                                                    <option value="+284" >Virgin Islands (British) (+284) </li>
-                                                    <option value="+340" >Virgin Islands (U.S.) (+340) </li>
-                                                    <option value="+850" >Korea (North) (+850) </li>
-                                                    <option value="+967" >Yemen (+967) </li>
-                                                    <option value="+38" >Yugoslavia (+38) </li>
-                                                    <option value="+260" >Zambia (+260) </li>
-                                                    <option value="+263" >Zimbabwe (+263) </li>
-                                                    <option value="+7" >Kazakhstan (+7) </li>
-                                                    <option value="Morocco" >(Morocco) </li>
+                                    <option value="+93" >Afghanistan (+93) </li>
+                                    <option value="+355" >Albania (+355) </li>
+                                    <option value="+213" >Algeria (+213) </li>
+                                    <option value="+1684" >American Samoa (+1684) </li>
+                                    <option value="+376" >Andorra (+376) </li>
+                                    <option value="+244" >Angola (+244) </li>
+                                    <option value="+1264" >Anguilla (+1264) </li>
+                                    <option value="+61" >Australia (+61) </li>
+                                    <option value="+1" >United States of America (+1) </li>
+                                    <option value="+1268" >Antigua and Barbuda (+1268) </li>
+                                    <option value="+54" >Argentina (+54) </li>
+                                    <option value="+374" >Armenia (+374) </li>
+                                    <option value="+297" >Aruba (+297) </li>
+                                    <option value="+43" >Austria (+43) </li>
+                                    <option value="+994" >Azerbaijan (+994) </li>
+                                    <option value="+1242" >Bahamas (+1242) </li>
+                                    <option value="+973" >Bahrain (+973) </li>
+                                    <option value="+880" >Bangladesh (+880) </li>
+                                    <option value="+1246" >Barbados (+1246) </li>
+                                    <option value="+375" >Belarus (+375) </li>
+                                    <option value="+1" >Canada (+1) </li>
+                                    <option value="+32" >Belgium (+32) </li>
+                                    <option value="+501" >Belize (+501) </li>
+                                    <option value="+229" >Benin (+229) </li>
+                                    <option value="+1441" >Bermuda (+1441) </li>
+                                    <option value="+975" >Bhutan (+975) </li>
+                                    <option value="+591" >Bolivia (+591) </li>
+                                    <option value="+387" >Bosnia and Herzegovina (+387) </li>
+                                    <option value="+267" >Botswana (+267) </li>
+                                    <option value="+55" >Brazil (+55) </li>
+                                    <option value="+246" >British Indian Ocean Territory (+246) </li>
+                                    <option value="+1284" >British Virgin Islands (+1284) </li>
+                                    <option value="+7" >Russian Federation (+7) </li>
+                                    <option value="+359" >Bulgaria (+359) </li>
+                                    <option value="+226" >Burkina Faso (+226) </li>
+                                    <option value="+257" >Burundi (+257) </li>
+                                    <option value="+855" >Cambodia (+855) </li>
+                                    <option value="+237" >Cameroon (+237) </li>
+                                    <option value="+238" >Cape Verde (+238) </li>
+                                    <option value="+1345" >Cayman Islands (+1345) </li>
+                                    <option value="+236" >Central African Republic (+236) </li>
+                                    <option value="+235" >Chad (+235) </li>
+                                    <option value="+56" >Chile (+56) </li>
+                                    <option value="+86" >China (+86) </li>
+                                    <option value="+47" >Svalbard and Jan Mayen (+47) </li>
+                                    <option value="+61" >Cocos Islands (+61) </li>
+                                    <option value="+57" >Colombia (+57) </li>
+                                    <option value="+269" >Comoros (+269) </li>
+                                    <option value="+682" >Cook Islands (+682) </li>
+                                    <option value="+506" >Costa Rica (+506) </li>
+                                    <option value="+385" >Croatia (+385) </li>
+                                    <option value="+53" >Cuba (+53) </li>
+                                    <option value="+357" >Cyprus (+357) </li>
+                                    <option value="+420" >Czech Republic (+420) </li>
+                                    <option value="+243" >Democratic Republic of The Congo (+243) </li>
+                                    <option value="+45" >Denmark (+45) </li>
+                                    <option value="+253" >Djibouti (+253) </li>
+                                    <option value="+1767" >Dominica (+1767) </li>
+                                    <option value="+1809" >Dominican Republic (+1809) </li>
+                                    <option value="+64" >New Zealand (+64) </li>
+                                    <option value="+670" >East Timor (+670) </li>
+                                    <option value="+593" >Ecuador (+593) </li>
+                                    <option value="+20" >Egypt (+20) </li>
+                                    <option value="+503" >El Salvador (+503) </li>
+                                    <option value="+240" >Equatorial Guinea (+240) </li>
+                                    <option value="+291" >Eritrea (+291) </li>
+                                    <option value="+372" >Estonia (+372) </li>
+                                    <option value="+251" >Ethiopia (+251) </li>
+                                    <option value="+500" >Falkland Islands (+500) </li>
+                                    <option value="+298" >Faroe Islands (+298) </li>
+                                    <option value="+679" >Fiji (+679) </li>
+                                    <option value="+358" >Finland (+358) </li>
+                                    <option value="+33" >France (+33) </li>
+                                    <option value="+594" >French Guiana (+594) </li>
+                                    <option value="+689" >French Polynesia (+689) </li>
+                                    <option value="+241" >Gabon (+241) </li>
+                                    <option value="+220" >Gambia (+220) </li>
+                                    <option value="+995" >Georgia (+995) </li>
+                                    <option value="+49" >Germany (+49) </li>
+                                    <option value="+233" >Ghana (+233) </li>
+                                    <option value="+350" >Gibraltar (+350) </li>
+                                    <option value="+30" >Greece (+30) </li>
+                                    <option value="+299" >Greenland (+299) </li>
+                                    <option value="+1473" >Grenada (+1473) </li>
+                                    <option value="+64" >Pitcairn (+64) </li>
+                                    <option value="+1671" >Guam (+1671) </li>
+                                    <option value="+502" >Guatemala (+502) </li>
+                                    <option value="+441481" >Guernsey (+441481) </li>
+                                    <option value="+224" >Guinea (+224) </li>
+                                    <option value="+245" >Guinea (+245) </li>
+                                    <option value="+592" >Guyana (+592) </li>
+                                    <option value="+509" >Haiti (+509) </li>
+                                    <option value="+504" >Honduras (+504) </li>
+                                    <option value="+852" >Hong Kong (+852) </li>
+                                    <option value="+36" >Hungary (+36) </li>
+                                    <option value="+354" >Iceland (+354) </li>
+                                    <option value="+62" >Indonesia (+62) </li>
+                                    <option value="+98" >Iran (+98) </li>
+                                    <option value="+964" >Iraq (+964) </li>
+                                    <option value="+353" >Ireland (+353) </li>
+                                    <option value="+441624" >Isle of Man (+441624) </li>
+                                    <option value="+972" >Israel (+972) </li>
+                                    <option value="+39" >Italy (+39) </li>
+                                    <option value="+1876" >Jamaica (+1876) </li>
+                                    <option value="+81" >Japan (+81) </li>
+                                    <option value="+441534" >Jersey (+441534) </li>
+                                    <option value="+962" >Jordan (+962) </li>
+                                    <option value="+82" >Korea (South) (+82) </li>
+                                    <option value="+254" >Kenya (+254) </li>
+                                    <option value="+686" >Kiribati (+686) </li>
+                                    <option value="+95" >Myanmar (+95) </li>
+                                    <option value="+383" >Kosovo (+383) </li>
+                                    <option value="+965" >Kuwait (+965) </li>
+                                    <option value="+996" >Kyrgyzstan (+996) </li>
+                                    <option value="+856" >Laos (+856) </li>
+                                    <option value="+371" >Latvia (+371) </li>
+                                    <option value="+961" >Lebanon (+961) </li>
+                                    <option value="+266" >Lesotho (+266) </li>
+                                    <option value="+231" >Liberia (+231) </li>
+                                    <option value="+218" >Libya (+218) </li>
+                                    <option value="+423" >Liechtenstein (+423) </li>
+                                    <option value="+370" >Lithuania (+370) </li>
+                                    <option value="+352" >Luxembourg (+352) </li>
+                                    <option value="+853" >Macau (+853) </li>
+                                    <option value="+389" >Macedonia (+389) </li>
+                                    <option value="+261" >Madagascar (+261) </li>
+                                    <option value="+265" >Malawi (+265) </li>
+                                    <option value="+60" >Malaysia (+60) </li>
+                                    <option value="+960" >Maldives (+960) </li>
+                                    <option value="+223" >Mali (+223) </li>
+                                    <option value="+356" >Malta (+356) </li>
+                                    <option value="+692" >Marshall Islands (+692) </li>
+                                    <option value="+596" >Martinique (+596) </li>
+                                    <option value="+222" >Mauritania (+222) </li>
+                                    <option value="+230" >Mauritius (+230) </li>
+                                    
+                                    <option value="+691" >Micronesia (+691) </li>
+                                    <option value="+373" >Moldova (+373) </li>
+                                    <option value="+377" >Monaco (+377) </li>
+                                    <option value="+976" >Mongolia (+976) </li>
+                                    <option value="+382" >Montenegro (+382) </li>
+                                    <option value="+1664" >Montserrat (+1664) </li>
+                                    <option value="+212" >Western Sahara (+212) </li>
+                                    <option value="+258" >Mozambique (+258) </li>
+                                    <option value="+264" >Namibia (+264) </li>
+                                    <option value="+674" >Nauru (+674) </li>
+                                    <option value="+977" >Nepal (+977) </li>
+                                    <option value="+31" >Netherlands (+31) </li>
+                                    <option value="+225" >Ivory Coast (+225) </li>
+                                    <option value="+687" >New Caledonia (+687) </li>
+                                    <option value="+505" >Nicaragua (+505) </li>
+                                    <option value="+227" >Niger (+227) </li>
+                                    <option value="+234" >Nigeria (+234) </li>
+                                    <option value="+683" >Niue (+683) </li>
+                                    <option value="+242" >Republic of The Congo (+242) </li>
+                                    <option value="+1670" >Northern Mariana Islands (+1670) </li>
+                                    <option value="+262" >Reunion (+262) </li>
+                                    <option value="+968" >Oman (+968) </li>
+                                    <option value="+92" >Pakistan (+92) </li>
+                                    <option value="+680" >Palau (+680) </li>
+                                    <option value="+970" >Palestine (+970) </li>
+                                    <option value="+507" >Panama (+507) </li>
+                                    <option value="+675" >Papua New Guinea (+675) </li>
+                                    <option value="+595" >Paraguay (+595) </li>
+                                    <option value="+51" >Peru (+51) </li>
+                                    <option value="+63" >Philippines (+63) </li>
+                                    <option value="+48" >Poland (+48) </li>
+                                    <option value="+351" >Portugal (+351) </li>
+                                    <option value="+1939" >Puerto Rico (+1939) </li>
+                                    <option value="+974" >Qatar (+974) </li>
+                                    <option value="+290" >St. Helena (+290) </li>
+                                    <option value="+40" >Romania (+40) </li>
+                                    <option value="+379" >Vatican City State (Holy See) (+379) </li>
+                                    <option value="+250" >Rwanda (+250) </li>
+                                    <option value="+421" >Slovakia (+421) </li>
+                                    <option value="+1869" >Saint Kitts and Nevis (+1869) </li>
+                                    <option value="+1758" >Saint Lucia (+1758) </li>
+                                    <option value="+508" >St. Pierre and Miquelon (+508) </li>
+                                    <option value="+1784" >Saint Vincent and The Grenadines (+1784) </li>
+                                    <option value="+685" >Samoa (+685) </li>
+                                    <option value="+378" >San Marino (+378) </li>
+                                    <option value="+239" >Sao Tome and Principe (+239) </li>
+                                    <option value="+966" >Saudi Arabia (+966) </li>
+                                    <option value="+221" >Senegal (+221) </li>
+                                    <option value="+381" >Serbia (+381) </li>
+                                    <option value="+248" >Seychelles (+248) </li>
+                                    <option value="+232" >Sierra Leone (+232) </li>
+                                    <option value="+65" >Singapore (+65) </li>
+                                    <option value="+1721" >Sint Maarten (+1721) </li>
+                                    <option value="+590" >Saint Martin (+590) </li>
+                                    <option value="+386" >Slovenia (+386) </li>
+                                    <option value="+677" >Solomon Islands (+677) </li>
+                                    <option value="+252" >Somalia (+252) </li>
+                                    <option value="+27" >South Africa (+27) </li>
+                                    <option value="+211" >South Sudan (+211) </li>
+                                    <option value="+34" >Spain (+34) </li>
+                                    <option value="+94" >Sri Lanka (+94) </li>
+                                    <option value="+599" >Netherlands Antilles (+599) </li>
+                                    <option value="+249" >Sudan (+249) </li>
+                                    <option value="+597" >Suriname (+597) </li>
+                                    <option value="+672" >Norfolk Island (+672) </li>
+                                    <option value="+268" >Swaziland (+268) </li>
+                                    <option value="+46" >Sweden (+46) </li>
+                                    <option value="+41" >Switzerland (+41) </li>
+                                    <option value="+963" >Syria (+963) </li>
+                                    <option value="+886" >Taiwan (+886) </li>
+                                    <option value="+992" >Tajikistan (+992) </li>
+                                    <option value="+255" >Tanzania (+255) </li>
+                                    <option value="+66" >Thailand (+66) </li>
+                                    <option value="+228" >Togo (+228) </li>
+                                    <option value="+690" >Tokelau (+690) </li>
+                                    <option value="+676" >Tonga (+676) </li>
+                                    <option value="+1868" >Trinidad and Tobago (+1868) </li>
+                                    <option value="+216" >Tunisia (+216) </li>
+                                    <option value="+90" >Turkey (+90) </li>
+                                    <option value="+993" >Turkmenistan (+993) </li>
+                                    <option value="+1649" >Turks and Caicos Islands (+1649) </li>
+                                    <option value="+688" >Tuvalu (+688) </li>
+                                    <option value="+1340" >U.S. Virgin Islands (+1340) </li>
+                                    <option value="+256" >Uganda (+256) </li>
+                                    <option value="+380" >Ukraine (+380) </li>
+                                    <option value="+971" >United Arab Emirates (+971) </li>
+                                    <option value="+44" >United Kingdom (+44) </li>
+                                    <option value="+673" >Brunei Darussalam (+673) </li>
+                                    <option value="+598" >Uruguay (+598) </li>
+                                    <option value="+581" >Us Minor Outlying Islands (+581) </li>
+                                    <option value="+998" >Uzbekistan (+998) </li>
+                                    <option value="+678" >Vanuatu (+678) </li>
+                                    <option value="+681" >Wallis and Futuna Islands (+681) </li>
+                                    <option value="+58" >Venezuela (+58) </li>
+                                    <option value="+84" >Vietnam (+84) </li>
+                                    <option value="+284" >Virgin Islands (British) (+284) </li>
+                                    <option value="+340" >Virgin Islands (U.S.) (+340) </li>
+                                    <option value="+850" >Korea (North) (+850) </li>
+                                    <option value="+967" >Yemen (+967) </li>
+                                    <option value="+38" >Yugoslavia (+38) </li>
+                                    <option value="+260" >Zambia (+260) </li>
+                                    <option value="+263" >Zimbabwe (+263) </li>
+                                    <option value="+7" >Kazakhstan (+7) </li>
+                                    <option value="Morocco" >(Morocco) </li>
                                 </select>
-                                <input type="number" class="form-control" id="phone" aria-describedby="emailHelp" placeholder="Enter Phone Number">
+                                <input required type="number" class="form-control" id="phone" aria-describedby="emailHelp" placeholder="Enter Phone Number">
 
                             </div>
 
@@ -329,7 +330,8 @@
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="country">Country of Residence</label>
-                                <select class="custom-select" id="country" name="country">
+                                <select class="custom-select" id="country" name="country" required>
+                                    <option value="Mexico">Mexico</option>
                                     <option value="Afganistan">Afghanistan</option>
                                     <option value="Albania">Albania</option>
                                     <option value="Algeria">Algeria</option>
@@ -469,7 +471,7 @@
                                     <option value="Mauritania">Mauritania</option>
                                     <option value="Mauritius">Mauritius</option>
                                     <option value="Mayotte">Mayotte</option>
-                                    <option value="Mexico">Mexico</option>
+                                    
                                     <option value="Midway Islands">Midway Islands</option>
                                     <option value="Moldova">Moldova</option>
                                     <option value="Monaco">Monaco</option>
@@ -579,14 +581,23 @@
                                  </select> </div>
                             <div class="form-group">
                                 <label for="program">Program of interest</label>
-                                <input type="text" class="form-control" id="country" aria-describedby="emailHelp" placeholder="Enter Program of Interest">
-                            </div>
+                                <select class="custom-select" id="degree" required>
+                                    {% for i in degree %}
+                                    <option value="{{i.id}}" >{{i.name}}</option>
+                                    {% endfor %}
+                                </select>
+                                 </div>
                         </div>
-                        <div class="form-group">
-                            <label for="program">Tell Us</label>
-                            <input type="text" class="form-control" id="country" aria-describedby="emailHelp" placeholder="How did you hear about us">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="program">Specialization</label>
+                                <select class="custom-select dropup" id="specialization" required>
+                                    {% for i in spec %}
+                                    <option value="{{i.id}}" data-tag="{{i.degreeProgram.id}}">{{i.name}}</option>
+                                    {% endfor %}
+                                </select>
+                                 </div>
                         </div>
-
                         <div class="form-group">
                             <label for="message">Message</label>
                             <textarea class="form-control"></textarea>
@@ -602,12 +613,12 @@
     </div>
     <div class=" icon-bar">
         <a href="https://www.facebook.com/uni.azteca.internacional"><img class="linkedin" src="{% static 'images/facebook-3.svg'%}"></a>
-        <a href="https://twitter.com/uniazteca?ref_src=twsrc%5Etfw%7Ctwcamp%5Eembeddedtimeline%7Ctwterm%5Eprofile%3Auniazteca&ref_url=https%3A%2F%2Fwww.univ-azteca.edu.mx%2FEn%2Fundergraduate%2F"><img class="linkedin" src="{% static 'images/twitter.svg'%}"></a>
+        <a href="https://twitter.com/uniazteca?ref_src=twsrc%5Etfw%7Ctwcamp%5Eembeddedtimeline%7Ctwterm%5Eprofile%3Auniazteca&ref_url=https%3A%2F%2Fwww.univ-azteca.edu.mx%2FEn%2Fundergraduate%2F"><img class="linkedin" src="{% static 'images/twitter-4 (1).svg'%}"></a>
         <a href="#"><img class="linkedin" src="{% static 'images/linkedin-icon-2.svg'%}"></a>
-        <a href="#"><img src="{% static 'images/youtube-3.svg' %}" class="youtube"></a>
-        <a href="#"><img src="{% static 'images/whts.png'%}"></a>
+        <a href="#"><img src="{% static 'images/youtube-3 (1).svg' %}" class="youtube"></a>
+        <a href="#"><img src="{% static 'images/whatsapp-symbol.svg'%}" class="youtube"></a>
     </div>
-    <section class="sticky-top wow fadeInDown" data-wow-delay="0.7s" style="visibility: visible; animation-delay: 1s; animation-name: fadeInDown;" id="navbar">
+    <section class="sticky-top " id="navbar">
 
         <div id='top-nav'>
             <div class="container-fluid ml-auto pt-3">
@@ -628,7 +639,7 @@
 
         <nav class="navbar navbar-expand-xl navbar-light">
 
-            <a class="navbar-brand" href="index"><img src="{% static 'images/testLogo.svg' %}"></a>
+            <a class="navbar-brand" href="/"><img src="{% static 'images/testLogo.svg' %}"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -636,8 +647,8 @@
 
             <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item dropdown color-blue pl-2">
-                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <li class="nav-item dropdown color-blue pl-2" >
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     About Us
             </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -648,19 +659,19 @@
                     </li>
 
                     <li class="nav-item dropdown color-blue pl-2">
-                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Academics
             </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="#">Departments</a>
                             <a class="dropdown-item" href="/faculty">Faculty</a>
-                            <a class="dropdown-item" href="/gradingSystem">Grading System,</a>
-                            <a class="dropdown-item" href="/studentFilesPolicy">Student Files Policy,</a>
+                            <a class="dropdown-item" href="/gradingSystem">Grading System</a>
+                            <a class="dropdown-item" href="/studentFilesPolicy">Student Files Policy</a>
                             <a class="dropdown-item" href="/thesisPolicy">Thesis Policy</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown pl-2">
-                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Admissions
             </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -670,26 +681,26 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown pl-2">
-                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Educational Offer
             </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             {% for education in educationalOffering %}
-                            <a class="dropdown-item" style="color:#254aa5; " href="/educationalOffering/{{education.id}}">{{education.name}}</a> {% endfor %}
+                            <a class="dropdown-item"  href="/educationalOffering/{{education.id}}">{{education.name}}</a> {% endfor %}
                         </div>
                     </li>
                     <li class="nav-item dropdown pl-2">
-                        <a class="nav-link dropdown-toggle text-white" href="# " id="navbarDropdown" role="button " data-toggle="dropdown" aria-haspopup="true " aria-expanded="false ">
+                        <a class="nav-link dropdown-toggle " href="# " id="navbarDropdown" role="button " data-toggle="dropdown" aria-haspopup="true " aria-expanded="false ">
             Recognitions
             </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown ">
-                            <a class="dropdown-item" style="color:#254aa5; " href="/accreditation">accreditation</a>
-                            <a class="dropdown-item" style="color:#254aa5; " href="/describingAccreditation ">Describing accreditation</a>
-                            <a class="dropdown-item" style="color:#254aa5; " href="/afterGraduationServices">After Graduation Services</a>
+                            <a class="dropdown-item"  href="/accreditation">Accreditation</a>
+                            <a class="dropdown-item"  href="/describingAccreditation ">Describing Accreditation</a>
+                            <a class="dropdown-item"  href="/afterGraduationServices">After Graduation Services</a>
                         </div>
                     </li>
-                    <li class="nav-item pl-2"><a class="nav-link text-white" href="/gallery">Gallery</a></li>
-                    <li class="nav-item pl-2"><a class="nav-link text-white" href="/contact">Contact Us</a></li>
+                    <li class="nav-item pl-2"><a class="nav-link" href="/gallery">Gallery</a></li>
+                    <li class="nav-item pl-2"><a class="nav-link" href="/contact">Contact Us</a></li>
                     <li class="nav-link display-none"> </li>
                     <li class="nav-link display-none"><a href="#" class="btn manual-btn btn-sm mt-2" data-toggle="modal" data-target="#myModal">Login</a>
                         <button type="button" class="btn manual-btn btn-sm mt-2" data-toggle="modal" data-target="#form">Apply Now</button></li>
@@ -708,11 +719,11 @@
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="d-block w-100" src="{% static 'images/1.png' %}" width="300px" height="400px" alt="First slide">
+                    <img class="d-block w-100" src="{% static 'images/1.png' %}" alt="First slide">
                 </div>
                 {% for i in images %}
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="/media/{{i.image}}" width="300px" height="400px"  alt="Second slide">
+                    <img class="d-block w-100" src="/media/{{i.image}}" alt="Second slide">
                 </div>
                 {% endfor %}
             </div>
@@ -751,26 +762,7 @@
                                         <a href="/media/{{i.attachment}}" class="px-xl-3 px-lg-2 px-md-1 font-weight-bold responsive-text"> {{i.title}}</a>
                                         {% else %}
                                         <a data-toggle="modal" href="#{{i.title|cut:' '}}" style="text-decoration:none;" class="px-lg-2 px-md-1 px-xl-3 font-weight-bold responsive-text"> {{i.title}}</a>
-                                         <!-- Modal -->
-                                        <div class="modal fade" id="{{i.title|cut:" "}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                            <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                <h5 class="modal-title text-white" id="exampleModalLabel">{{i.title}}</h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                                </div>
-                                                <div class="modal-body">
-                                                ...
-                                                </div>
-                                                <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                <button type="button" class="btn btn-primary">Save changes</button>
-                                                </div>
-                                            </div>
-                                            </div>
-                                        </div>
+                                        
                                         {% endif %}
                                     </div>
                                 </div>
@@ -778,61 +770,7 @@
                         </a>
                     </div>
                     {% endfor %}
-                    <!-- <div class="col-lg-4 col-md-4 col-sm-6 col-6">
-                        <div class="card card-2">
-                            <div class="card-body justify-content-center " id="course-card-body ">
-                                <div class="row ">
-                                    <img class=" card-image " src="{% static 'images/forms-document-svgrepo-com.svg' %} ">
-
-                                    <p class="card-text px-lg-3 text-dark font-weight-bold">Application Form</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-6">
-                        <div class="card card-2">
-                            <div class="card-body " id="course-card-body ">
-                                <div class="row ">
-                                    <img class="card-image " src="{% static 'images/iconfinder_-_Research-Microbiology-Virus-Science-Microscope-Laboratory_6124199.svg' %} ">
-
-                                    <p class="card-text px-lg-3 text-dark font-weight-bold">Prospectus 2021</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-6">
-                        <div class="card card-2">
-                            <div class="card-body " id="course-card-body ">
-                                <div class="row ">
-                                    <img class="card-image " src="{% static 'images/calendar.svg' %} ">
-
-                                    <p class="card-text px-lg-3 text-dark font-weight-bold">E-Learning</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-6">
-                        <div class="card card-2">
-                            <div class="card-body " id="course-card-body ">
-                                <div class="row ">
-                                    <img class="card-image " src="{% static 'images/placement.svg' %} ">
-
-                                    <p class="card-text px-lg-3 text-dark font-weight-bold">Azteca Facts</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-6">
-                        <div class="card card-2">
-                            <div class="card-body " id="course-card-body ">
-                                <div class="row ">
-                                    <img class="card-image " src="{% static 'images/Handshake_icon_GREEN-BLUE.svg' %}">
-
-                                    <p class="card-text px-lg-3 text-dark font-weight-bold">Advantages</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
+                  
 
 
                 </div>
@@ -845,10 +783,9 @@
     <div class="container-fluid ">
         <div class="fetured-info  ">
             <div class="container ">
-                <h3 class="tittle text-center my-lg-5 my-3 ">Overview</h3>
-                <p class="text-center font-weight-bold text-muted small">We are focused on the individual self, offering each student a life plan that allows discovering the inner potential positively, allowing to find the right path, giving meaning to their lives and conduct their work based on humanist priciples,
-                    building lives with the values of truth, justice and honesty. Universidad Azteca is a multi-campus university system of national and international representatives. The coverage of Universidad Azteca´s International Liaison extends
-                    to various regions worldwide.</p>
+                <h3 class="tittle text-center">Overview</h3>
+                <p class="text-center text-dark">We are focused on the individual self, offering each student a life plan that allows discovering the inner potential positively, allowing to find the right path, giving meaning to their lives and conduct their work based on humanist priciples,
+                    building lives with the values of truth, justice and honesty. Universidad Azteca is a multi-campus university system of national and international representatives.</p>
             </div>
             <div class="row fetured-sec mt-lg-5 ">
 
@@ -914,65 +851,77 @@
                 <div class="main-content ">
                     <div class="heading ">
                         <div class="heading-content ">
-                            <h2 class="text-uppercase font-weight-bold wow fadeInLeft " style="visibility: visible;animation-name:fadeInLeft; ">Grab Knowledge</h2>
-                            <p class="sub-heading wow fadeIn " data-wow-delay="0.3s " style="visibility: visible;animation-name:fadeIn ">your Learnings, our expertise</p>
-                            <p class="theme-color font-weight-600 wow fadeIn " data-wow-delay="0.5s " style="visibility: visible;animation-name:fadeIn ">As a dynamic university, we strive to offer, through effective teaching, quality education founded on the idea that one’s intellectual and personal development go hand in hand, complementing and fulfilling each other.</p>
+                            <h2 class="text-uppercase font-weight-bold">Grab Knowledge</h2>
+                            <p class="sub-heading ">your Learnings, our expertise</p>
+                            <p class="theme-color font-weight-600">As a dynamic university, we strive to offer, through effective teaching, quality education founded on the idea that one’s intellectual and personal development go hand in hand, complementing and fulfilling each other.</p>
                         </div>
                     </div>
-                    <div class="hire-content wow fadeInRight " style=" visibility: visible; animation-name:fadeInRight ">
+                    <div class="hire-content" style=" display:flex;">
                         <div class="image-container ">
                             <div class="img-content ">
-                                <p>Student-Centered</p>
+                                <p>Student <br>Centered</p>
                             </div>
                             <div class="img-content ">
                                 <p>Constructivist</p>
                             </div>
                             <div class="img-content ">
-                                <p>Based on Competencies</p>
+                                <p >Competencies</p>
                             </div>
                             <div class="img-content ">
-                                <p>Remote and Online</p>
+                                <p >Remote</p>
                             </div>
                             <div class="img-content ">
-                                <p>Globalization Focused</p>
+                                <p>globalism</p>
                             </div>
                             <div class="img-content ">
-                                <p>Application Approach</p>
+                                <p >Practicality</p>
                             </div>
                             <div class="img-content ">
-                                <p>Bussines Vinculation</p>
+                                <p>Bussines</p>
                             </div>
                             <div class="img-content ">
-                                <p>Flexible</p>
+                                <p >Flexible</p>
                             </div>
 
                             <div class="rotating-images ">
                                 <div class="img-box bg-dark-1">
-                                    <img src="{% static 'images/studentCentered.png' %} ">
+                                    <img src="{% static 'images/constructivist.png' %} ">
+                                    <!-- <img style="content:'';" src="{% static 'images/studentCentered.png' %} "> -->
                                 </div>
-                                <div class="img-box ">
+                                <div class="img-box bg-dark-1">
                                     <img src="{% static 'images/constructivist.png' %} ">
                                 </div>
                                 <div class="img-box bg-dark-1">
-                                    <img class="img-fluid" src="{% static 'images/competency.png' %} ">
-                                </div>
-                                <div class="img-box ">
-                                    <img src="{% static 'images/remoteAndOnline.png' %} ">
-                                </div>
-                                <div class="img-box">
-                                    <img class="img-fluid" src="{% static 'images/globslization.png' %} ">
+                                    <img src="{% static 'images/constructivist.png' %} ">
+                                    <!-- <img src="{% static 'images/competency.png' %} "> -->
                                 </div>
                                 <div class="img-box bg-dark-1">
-                                    <img src="{% static 'images/apllicationApproach.png' %} ">
-                                </div>
-                                <div class="img-box ">
-                                    <img src="{% static 'images/bussinesVinculation.png' %} ">
+                                    <img src="{% static 'images/constructivist.png' %} ">
+                                    <!-- <img src="{% static 'images/remoteAndOnline.png' %} "> -->
                                 </div>
                                 <div class="img-box bg-dark-1">
-                                    <img src="{% static 'images/flexible.png' %} ">
+                                    <img src="{% static 'images/constructivist.png' %} ">
+                                    <!-- <img src="{% static 'images/globslization.png' %}">  -->
+                                </div>
+                                
+                                <div class="img-box bg-dark-1">
+                                    <img src="{% static 'images/constructivist.png' %} ">
+                                    <!-- <img src="{% static 'images/apllicationApproach.png' %} "> -->
+                                </div>
+                                <div class="img-box bg-dark-1">
+                                    <img src="{% static 'images/constructivist.png' %} ">
+                                    <!-- <img src="{% static 'images/tech/android.png' %} "> -->
+                                </div>
+                                <div class="img-box bg-dark-1">
+                                    <img src="{% static 'images/constructivist.png' %} ">
+                                    <!-- <img src="{% static 'images/bussinesVinculation.png' %} "> -->
+                                </div>
+                                <div class="img-box bg-dark-1">
+                                    <img src="{% static 'images/constructivist.png' %} ">
+                                    <!-- <img src="{% static 'images/bussinesVinculationpng' %} "> -->
                                 </div>
                                 <div class="middle-img ">
-                                    <img src="{% static 'images/undraw_education_f8ru.svg' %} " alt=" ">
+                                    <img src="{% static 'images/undraw_book_lover_mkck.svg' %} " alt=" ">
                                 </div>
                             </div>
                         </div>
@@ -987,15 +936,15 @@
             <div class="container ">
                 <div class="">
                     <div class="text-center ">
-                        <p class="text-white text-center wow fadeIn " style="visibility:visible;animation-name:fadeIn;font-size:2rem; ">Our Testimonials</p>
-                        <p class="text-white text-center wow fadeIn " style="visibility: visible;animation-name:fadeIn;"><small style="color:rgb(253, 170, 16)"><i><b>SEE WHAT OUR SATISFIED STUDENTS ARE SAYING ABOUT US</b></i></small></p>
+                        <p class="text-white text-center" style="font-size:2rem; ">Our Testimonials</p>
+                        <p class="text-white text-center"><small style="color:rgb(253, 170, 16)"><i><b>SEE WHAT OUR SATISFIED STUDENTS ARE SAYING ABOUT US</b></i></small></p>
                     </div>
                 </div>
                 <div class="owl-slide owl-carousel ">
                     {% for i in testimonial %}
                     <div class="ftco-testimonial-1 ">
                         <div class="ftco-content testimonial_inner">
-                            <p class="text-white text-center">&ldquo;{{i.content}}&rdquo;
+                            <p class="text-white text-center">{{i.content}};
                             </p>
                         </div>
                         <div class="ftco-testimonial-vcard d-flex align-items-center text-center mb-4 ">
@@ -1014,165 +963,6 @@
 
 
 
-
-
-
-
-    <!-- Popular Courses   -->
-    <!-- 
-    <section>
-        <div class="site-section ">
-            <div class="container ">
-                <div class="row mb-5 justify-content-center text-center ">
-                    <div class="col-lg-6 ">
-                        <h2 class="section-title-underline mb-3 ">
-                            <span>Online Azteca University News</span>
-                        </h2>
-                        <p class="text-dark">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, id?</p>
-                    </div>
-                </div>
-
-                <div class="row ">
-                    <div class="col-12 ">
-                        <div class="owl-slide-3 owl-carousel ">
-
-                            <div class="course-1-item ">
-                                <figure class="thumnail ">
-                                    <a href="course-single "><img src="{% static 'images/news1.jpg' %} " alt="Image " class="img-fluid "></a>
-                                    <div class="price ">$99.00</div>
-                                    <div class="category ">
-                                        <h3>Online Study</h3>
-                                    </div>
-                                </figure>
-                                <div class="course-1-content pb-4 ">
-                                    <h2>Learn about the benefits of studying online</h2>
-                                    <div class="rating text-center mb-3 ">
-                                        <span class="icon-star2 text-warning "></span>
-                                        <span class="icon-star2 text-warning "></span>
-                                        <span class="icon-star2 text-warning "></span>
-                                        <span class="icon-star2 text-warning "></span>
-                                        <span class="icon-star2 text-warning "></span>
-                                    </div>
-                                    <p class="desc mb-4 ">earn about the benefits of studying online Educational Model Azteca University Educational Model Online The University Educational Model ...</p>
-                                    <h3 class="text-white"><a href="course-single " class="btn read-more-btn rounded-0 px-4 ">Read More</a></p>
-                                </div>
-                            </div>
-                            <div class="course-1-item ">
-                                <figure class="thumnail ">
-                                    <a href="course-single "><img src="{% static 'images/news-2.jpg' %} " alt="Image " class="img-fluid "></a>
-                                    <div class="price ">$99.00</div>
-                                    <div class="category ">
-                                        <h3>Online Study</h3>
-                                    </div>
-                                </figure>
-                                <div class="course-1-content pb-4 ">
-                                    <h2>Learn about the benefits of studying online</h2>
-                                    <div class="rating text-center mb-3 ">
-                                        <span class="icon-star2 text-warning "></span>
-                                        <span class="icon-star2 text-warning "></span>
-                                        <span class="icon-star2 text-warning "></span>
-                                        <span class="icon-star2 text-warning "></span>
-                                        <span class="icon-star2 text-warning "></span>
-                                    </div>
-                                    <p class="desc mb-4 ">earn about the benefits of studying online Educational Model Azteca University Educational Model Online The University Educational Model ...</p>
-                                    <p><a href="course-single " class="btn read-more-btn rounded-0 px-4 ">Read More</a></p>
-                                </div>
-                            </div>
-                            <div class="course-1-item ">
-                                <figure class="thumnail ">
-                                    <a href="course-single "><img src="{% static 'images/news1.jpg' %} " height="100px" alt="Image " class="img-fluid "></a>
-                                    <div class="price ">$99.00</div>
-                                    <div class="category ">
-                                        <h3>Online Study</h3>
-                                    </div>
-                                </figure>
-                                <div class="course-1-content pb-4 ">
-                                    <h2>Learn about the benefits of studying online</h2>
-                                    <div class="rating text-center mb-3 ">
-                                        <span class="icon-star2 text-warning "></span>
-                                        <span class="icon-star2 text-warning "></span>
-                                        <span class="icon-star2 text-warning "></span>
-                                        <span class="icon-star2 text-warning "></span>
-                                        <span class="icon-star2 text-warning "></span>
-                                    </div>
-                                    <p class="desc mb-4 ">earn about the benefits of studying online Educational Model Azteca University Educational Model Online The University Educational Model ...</p>
-                                    <p><a href="course-single " class="btn read-more-btn rounded-0 px-4 ">Read More</a></p>
-                                </div>
-                            </div>
-
-                            <div class="course-1-item ">
-                                <figure class="thumnail ">
-                                    <a href="course-single "><img src="{% static 'images/news1.jpg' %} " alt="Image " class="img-fluid "></a>
-                                    <div class="price ">$99.00</div>
-                                    <div class="category ">
-                                        <h3>Online Study</h3>
-                                    </div>
-                                </figure>
-                                <div class="course-1-content pb-4 ">
-                                    <h2>Learn about the benefits of studying online</h2>
-                                    <div class="rating text-center mb-3 ">
-                                        <span class="icon-star2 text-warning "></span>
-                                        <span class="icon-star2 text-warning "></span>
-                                        <span class="icon-star2 text-warning "></span>
-                                        <span class="icon-star2 text-warning "></span>
-                                        <span class="icon-star2 text-warning "></span>
-                                    </div>
-                                    <p class="desc mb-4 ">earn about the benefits of studying online Educational Model Azteca University Educational Model Online The University Educational Model ...</p>
-                                    <p><a href="course-single " class="btn read-more-btn rounded-0 px-4 ">Read More</a></p>
-                                </div>
-                            </div>
-                            <div class="course-1-item ">
-                                <figure class="thumnail ">
-                                    <a href="course-single "><img src="{% static 'images/news1.jpg' %} " alt="Image " class="img-fluid "></a>
-                                    <div class="price ">$99.00</div>
-                                    <div class="category ">
-                                        <h3>Online Study</h3>
-                                    </div>
-                                </figure>
-                                <div class="course-1-content pb-4 ">
-                                    <h2>Learn about the benefits of studying online</h2>
-                                    <div class="rating text-center mb-3 ">
-                                        <span class="icon-star2 text-warning "></span>
-                                        <span class="icon-star2 text-warning "></span>
-                                        <span class="icon-star2 text-warning "></span>
-                                        <span class="icon-star2 text-warning "></span>
-                                        <span class="icon-star2 text-warning "></span>
-                                    </div>
-                                    <p class="desc mb-4 ">earn about the benefits of studying online Educational Model Azteca University Educational Model Online The University Educational Model ...</p>
-                                    <p><a href="course-single " class="btn read-more-btn rounded-0 px-4 ">Read More</a></p>
-                                </div>
-                            </div>
-                            <div class="course-1-item ">
-                                <figure class="thumnail ">
-                                    <a href="course-single "><img src="{% static 'images/news1.jpg' %} " alt="Image " class="img-fluid "></a>
-                                    <div class="price ">$99.00</div>
-                                    <div class="category ">
-                                        <h3>Online Study</h3>
-                                    </div>
-                                </figure>
-                                <div class="course-1-content pb-4 ">
-                                    <h2>Learn about the benefits of studying online</h2>
-                                    <div class="rating text-center mb-3 ">
-                                        <span class="icon-star2 text-warning "></span>
-                                        <span class="icon-star2 text-warning "></span>
-                                        <span class="icon-star2 text-warning "></span>
-                                        <span class="icon-star2 text-warning "></span>
-                                        <span class="icon-star2 text-warning "></span>
-                                    </div>
-                                    <p class="desc mb-4 ">earn about the benefits of studying online Educational Model Azteca University Educational Model Online The University Educational Model ...</p>
-                                    <p><a href="course-single " class="btn read-more-btn rounded-0 px-4 ">Read More</a></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
- -->
-
-
-
     <section class="jumbotron p-xl-5 p-sm-2" ">
         <div class="container pt-5 pb-4 pt-sm-2 pb-sm-2 ">
             <div class="section-title mb-0 ">
@@ -1180,13 +970,16 @@
                     <div class="col-md-12 ">
                         <h2 class="mt-0 mb-2 mt-sm-3 font-weight-600 theme_color_1 ">News & Updates</h2>
                         <h4 class=" theme_color_2 mb-4 "><i><small>Universidad Azteca excels in several domains everyday.</small></i></h4>
+                        <!-- <div class="owl-nav text-right"><button type="button" role="presentation" class="owl-prev"><i class="fa fa-chevron-left"></i></button>
+                            <button type="button" role="presentation" class="owl-next"><i class="fa fa-chevron-right"></i></button></div>
+                             -->
                     </div>
                 </div>
             </div>
             <div class="section-content ">
                 <div class="row ">
                     <div class="col-md-12 ">
-                        <div class="owl-carousel-3col owl-nav-top pt-3 " data-duration="8000 " data-nav="true ">
+                        <div class="owl-carousel-3col owl-slide-3 owl-nav-top" data-duration="8000" data-nav="true">
                             {% for i in news %}
                             <div class="item ">
                                 <div class="course-single-item bg-white border-1px clearfix hvr-float p-2 ">
@@ -1210,83 +1003,101 @@
             </div>
         </div>
     </section>
-
-
-
-
-
-
-
+    
 
     <section>
 
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModalAdmission" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Admissions</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-            <section>
-                <div class="container">
-                    <div class="col-xl-12">
-                        <h1 class="course-heading theme-color text-center text-uppercase pt-4">Sign - Up</h1>
-                        <div class="row pt-5">
-                          
-                            <div class="col-xl-4 col-lg-6 col-md-6 ">
-        
-                                <div class="card card-5">
-                                    <img class="card-img-top" src="{% static 'images/step1.png' %}" class="elementar-image" alt="Card image cap">
-                                    <div class="card-body">
-                                        <h5 class="card-title text-center theme-color font-weight-bolder">Select the Academic Unit of your preference and learn about its educational offer.</h5>
-                                        <!-- <p class="text-center theme-color">(DOUBLE DEGREE PROGRAM)</p> -->
-                                    </div>
+        <div class="modal fade" id="exampleModalAdmission" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Admissions</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <section>
+                        <div class="container">
+                            <div class="col-xl-12">
+                                <h1 class="course-heading theme-color text-center text-uppercase pt-4">Sign - Up</h1>
+                                <div class="row pt-5">
+                                  <section>
+                                      <div class="">
+                                          <div class="main-container">
+                                              <section class="reach-developer pt-5">
+                                                  <div class="container">
+                                                      <div class="content">
+                                                          <div class="top text-white">
+                                                              <p class="text-uppercase wow fadeIn" style="visibility: visible; animation-name:fadeIn">Sign up</p>
+                              
+                                                              <div id="typed-strings">
+                                                                  <h2 class="text-uppercase wow fadeIn" data-wow-delay="0.2s" style="visibility: visible; animation-name:fadeIn">in simple steps</h2>
+                                                              </div>
+                                                          </div>
+                                                          <div class="timeline">
+                                                              <div class="line"></div>
+                                                              <ul>
+                                                              
+                                                                  <li class="text-center">
+                                                                      <div class="img-box">
+                                                                          <div class="ico transition">
+                                                                              <div class="ico-box bg-white">
+                                                                                  <img src="{% static 'images/process.svg' %}" class="wow fadeIn" data-wow-delay="0.2s" style="visibility: visible; animation-name:fadeIn" alt="">
+                                                                              </div>
+                                                                          </div>
+                                                                      </div>
+                                                                      <h6 class="transition font-weight-normal text-uppercase wow fadeIn" data-wow-delay="0.2s" style="visibility: visible; animation-name:fadeIn">STEP - 1</h6>
+                                                                      <p class="text-white font-weight-light wow fadeIn" data-wow-delay="0.2s" style="visibility: visible; animation-name:fadeIn">Select the Academic Unit of your preference and learn about its educational offer.</p>
+                                                                  </li>
+                              
+                                                                  <li class="text-center">
+                                                                      <div class="img-box">
+                                                                          <div class="ico transition">
+                                                                              <div class="ico-box bg-white">
+                                                                                  <img src="{% static 'images/final.svg' %}" alt="" class="wow fadeIn" data-wow-delay="0.2s" style="visibility: visible; animation-name:fadeIn" ">
+                                                                              </div>
+                                                                          </div>
+                                                                      </div>
+                                                                      <h6 class="transition font-weight-normal text-uppercase wow fadeIn "  style="visibility: visible; animation-name:fadeIn ">STEP - 2</h6>
+                                                                      <p class="text-white font-weight-light wow fadeIn "  style="visibility: visible; animation-name:fadeIn ">Choose your Study Plan and Modality </p>
+                                                                  </li>
+                                                                  <li class="text-center">
+                                                                      <div class="img-box">
+                                                                          <div class="ico transition">
+                                                                              <div class="ico-box bg-white">
+                                                                                  <img src="{% static 'images/final.svg' %}" alt="" class="wow fadeIn" data-wow-delay="0.2s" style="visibility: visible; animation-name:fadeIn" ">
+                                                                              </div>
+                                                                          </div>
+                                                                      </div>
+                                                                      <h6 class="transition font-weight-normal text-uppercase wow fadeIn "  style="visibility: visible; animation-name:fadeIn ">STEP - 3</h6>
+                                                                      <p class="text-white font-weight-light wow fadeIn "  style="visibility: visible; animation-name:fadeIn ">Gather your documentation
+                                                                          and go to your Academic Unit or register online. </p>
+                                                                  </li>
+                                                              </ul>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                              </section>
+                                          </div>
+                                      </div>
+                                  </section>
+                                
                                 </div>
-        
-                            </div>
-                            <div class="col-xl-4 col-lg-6 col-md-6 ">
-        
-                                <div class="card card-5">
-                                    <img class="card-img-top" src="{% static 'images/step2.png' %}" class="elementar-image" alt="Card image cap">
-                                    <div class="card-body">
-                                        <h5 class="card-title text-center theme-color font-weight-bolder">Choose your Study Plan and Modality</h5>
-                                        <!-- <p class="text-center theme-color">(DOUBLE DEGREE PROGRAM)</p> -->
-                                    </div>
-                                </div>
-        
-                            </div>
-                            <div class="col-xl-4 col-lg-6 col-md-6 ">
-        
-                                <div class="card card-5">
-                                    <img class="card-img-top" src="{% static 'images/steps3.png' %}" class="elementar-image" alt="Card image cap">
-                                    <div class="card-body">
-                                        <h5 class="card-title text-center theme-color font-weight-bolder">Gather your documentation
-                                            and go to your Academic Unit or register online.</h5>
-                                        <!-- <p class="text-center theme-color">(DOUBLE DEGREE PROGRAM)</p> -->
-                                    </div>
-                                </div>
-        
                             </div>
                         </div>
-                    </div>
+                    </section>
+                    <div class="text-center">
+                    <button class="btn btn-outline-primary m-5" data-toggle="modal" data-target="#form" data-dismiss="modal">Apply Now!</button>
                 </div>
-            </section>
-            <div class="text-center">
-            <button class="btn btn-outline-primary m-5" data-toggle="modal" data-target="#form" data-dismiss="modal">Apply Now!</button>
-        </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-    
-        </div>
-      </div>
-    </div>
-  </div>
-
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            
+                </div>
+              </div>
+            </div>
+          </div>
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -1380,175 +1191,38 @@
           </button>
         </div>
         <div class="modal-body">
-        
-    <section class="technology-section" id="services">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="top-heading">
-                        <h2 class="text-uppercase text-center wow fadeIn" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeIn;">Educational Offerings</h2>
-                    </div>
-                </div>
-            </div>
-
-            <div class="tech-content">
-                <ul class="nav nav-pills  wow fadeIn" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeIn;" id="pills-tab" role="tablist">
-                
-                    <li class="nav-item wow fadeIn" style="visibility: visible; animation-delay: 0.45s; animation-name: fadeIn;">
-                        <a class="nav-link active ma_link" id="pills-backend-tab" data-toggle="pill" data-target="#pills-backend" role="tab" aria-controls="pills-backend" aria-selected="true">Bachelors Degree</a>
-                    </li>
-                
-                    <li class="nav-item  wow fadeIn" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeIn;">
-                        <a class="nav-link ma_link" id="pills-frontend-tab" data-toggle="pill" href="#pills-frontend" role="tab" aria-controls="pills-frontend" aria-selected="false">Masters Degree</a>
-                    </li>
-                    <li class="nav-item wow fadeIn" style="visibility: visible; animation-delay: 0.55s; animation-name: fadeIn;">
-                        <a class="nav-link ma_link" id="pills-cms-tab" data-toggle="pill" href="#pills-cms" role="tab" aria-controls="pills-cms" aria-selected="false">Doctoral Degree</a>
-                    </li>
-                    <li class="nav-item wow fadeIn" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeIn;">
-                        <a class="nav-link ma_link" id="pills-ecommerce-tab" data-toggle="pill" href="#pills-ecommerce" role="tab" aria-controls="pills-ecommerce" aria-selected="false">Post Doctoral Degree</a>
-                    </li>
-                    <!-- <li class="nav-item wow fadeIn" style="visibility: visible; animation-delay: 0.65s; animation-name: fadeIn;">
-                        <a class="nav-link ma_link" id="pills-mobile-tab" data-toggle="pill" href="#pills-mobile" role="tab" aria-controls="pills-mobile" aria-selected="false">Mobile App</a>
-                    </li> -->
-                </ul>
-                <div class="tab-content" id="pills-tabContent">
-                 
-                    <div class="tab-pane fade show active" id="pills-{{forloop.counter}}" role="tabpanel" aria-labelledby="pills-{{forloop.counter}}-tab">
-
-                        <div class="row">
-                         
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-6 wow bounceInDown" data-wow-delay="0.7" style="visibility: visible; animation-delay: 0.5s; animation-name: bounceInDown;">
-                                <div class="content-wrapper">
-                                    <div class="img-wrapper">
-                                        <img class="img-fluid" src="{% static 'images/tech/android.png' %}" />
-                                    </div>
-                                    <h5>Bachelors of system Engineering</h5>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-6 wow bounceInDown" data-wow-delay="0.7" style="visibility: visible; animation-delay: 0.5s; animation-name: bounceInDown;">
-                                <div class="content-wrapper">
-                                    <div class="img-wrapper">
-                                        <img class="img-fluid" src="{% static 'images/tech/android.png' %}" />
-                                    </div>
-                                    <h5>Bachelors of Bussiness Administration</h5>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-6 wow bounceInDown" data-wow-delay="0.7" style="visibility: visible; animation-delay: 0.5s; animation-name: bounceInDown;">
-                                <div class="content-wrapper">
-                                    <div class="img-wrapper">
-                                        <img class="img-fluid" src="{% static 'images/tech/android.png' %}" />
-                                    </div>
-                                    <h5>Bachelors of Psychology</h5>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-6 wow bounceInDown" data-wow-delay="0.7" style="visibility: visible; animation-delay: 0.5s; animation-name: bounceInDown;">
-                                <div class="content-wrapper">
-                                    <div class="img-wrapper">
-                                        <img class="img-fluid" src="{% static 'images/tech/android.png' %}" />
-                                    </div>
-                                    <h5>And Many More</h5>
-                                </div>
-                            </div>
-                      
-                        </div>
-                    </div>
+           <h3 class="theme-color text-center course-heading text-uppercase p-4">Educational offering</h3>
                    
-                    <div class="tab-pane fade" id="pills-frontend" role="tabpanel" aria-labelledby="pills-frontend-tab">
-                        <div class="row">
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-6">
-                                <div class="content-wrapper">
-                                    <div class="img-wrapper">
-                                        <img class="img-fluid" src="{% static 'images/tech/android.png' %}" />
-                                    </div>
-                                    <h5>Master of Bussiness Administration</h5>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-6">
-                                <div class="content-wrapper">
-                                    <div class="img-wrapper">
-                                        <img class="img-fluid" src="{% static 'images/tech/android.png' %}" />
-                                    </div>
-                                    <h5>Master of Sciences in International Relations (MSc)</h5>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-6">
-                                <div class="content-wrapper">
-                                    <div class="img-wrapper">
-                                        <img class="img-fluid" src="{% static 'images/tech/android.png' %}" />
-                                    </div>
-                                    <h5> Master in Computer Sciences (M.Sc.)</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="pills-cms" role="tabpanel" aria-labelledby="pills-cms-tab">
-                        <div class="row">
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-6">
-                                <div class="content-wrapper">
-                                    <div class="img-wrapper">
-                                        <img class="img-fluid" src="{% static 'images/tech/android.png' %}" />
-                                    </div>
-                                    <h5>Doctor of Philosophy, (PhD) in Business Administration</h5>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-6">
-                                <div class="content-wrapper">
-                                    <div class="img-wrapper">
-                                        <img class="img-fluid" src="{% static 'images/tech/android.png' %}" />
-                                    </div>
-                                    <h5>Doctor of Business Administration (DBA)</h5>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-6">
-                                <div class="content-wrapper">
-                                    <div class="img-wrapper">
-                                        <img class="img-fluid" src="{% static 'images/tech/android.png' %}" />
-                                    </div>
-                                    <h5>Doctor of Philosophy, (PhD) in Economics</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                
 
-                    <div class="tab-pane fade" id="pills-ecommerce" role="tabpanel" aria-labelledby="pills-ecommerce-tab">
-                        <div class="row">
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-6">
-                                <div class="content-wrapper">
-                                    <div class="img-wrapper">
-                                        <img class="img-fluid" src="{% static 'images/tech/android.png' %}" />
-                                    </div>
-                                    <h5>Doctor of Sciences, (D.Sc.) Degree</h5>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-6">
-                                <div class="content-wrapper">
-                                    <div class="img-wrapper">
-                                        <img class="img-fluid" src="{% static 'images/tech/android.png' %}" />
-                                    </div>
-                                    <h5>Doctor of Letters (D.Litt., Litt.D., D. Lit., or Lit. D. ) Degree</h5>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-6">
-                                <div class="content-wrapper">
-                                    <div class="img-wrapper">
-                                        <img class="img-fluid" src="{% static 'images/tech/android.png' %}" />
-                                    </div>
-                                    <h5>Doctor of Laws, (LL.D.) Degree</h5>
-                                </div>
-                            </div>
-                           
-                        </div>
-                    </div>
-
-                    
-
-
-                </div>
+            <div class="container text-center pt-xl-5">
+                {% for i in educationalOffering %}
+                    <button class="btn btn-outline-primary" onclick='filterSelection("{{i.name|cut:' '}}")'> {{i.name}}</button>
+                {% endfor %}
             </div>
-
+            <div class="container text-center p-4">
+            <div class="row">
+                {% for i in degree %}
+                <div class="column {{i.educationalOffering.name|cut:' '}}">
+                <div class="content-wrapper">
+                    <div class="img-wrapper">
+                        <img src="{% static 'images/graduation-cap-svgrepo-com.svg' %}" alt="Mountains" style="width:30%;height:30%;">
+                    </div>
+                    <p>{{i.name}}</p>
+                    <!-- <p>Lorem ipsum dolor..</p> -->
+                </div>
+                </div>
+                {% endfor %}
+            </div>
+            <!-- END GRID -->
+            </div>
+                
+            
+            <!-- END MAIN -->
         </div>
-    </section>
-        </div>
+           
+            
+        
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         </div>
@@ -1556,15 +1230,6 @@
     </div>
   </div>
 
-
-
-<!-- 
-  Button trigger modal
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalAlliance">
-    Launch demo modal
-  </button> -->
-  
-  <!-- Modal -->
   <div class="modal fade" id="exampleModalAlliance" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl" role="document">
       <div class="modal-content">
@@ -1632,8 +1297,8 @@
               <div class="footer ">
                   <div class="container-fluid ">
                       <div class="row ml-5 ">
-                          <div class="col-lg-3 ">
-                              <p class="mb-4 "><img src="{% static 'images/testLogo.svg' %} " alt="Image "  width="300px" height="60px"></p>
+                          <div class="col-lg-3 col-md-3 col-sm-12">
+                              <p class="mb-4 "><img src="{% static 'images/testLogo.svg' %} " alt="Image "  width="200px" height="60px"></p>
                               
                           </div>
                           <div class="col-lg-3 ml-auto">
@@ -1649,10 +1314,10 @@
       
                               <ul class="list-unstyled mr-auto">
                                   <li><a href="#" data-toggle="modal" data-target="#exampleModalAlliance">Alliances and Agreements</a></li>
-                                  <li><a href="# ">International Network System</a></li>
+                                  <li><a href="# " data-toggle="modal" data-target="#exampleModalAlliance">International Network System</a></li>
                                   <li><a href="{% static 'images/AvisodePrivacidad.pdf' %}" >Notice of Privacy</a></li>
                                   <li><a href="#" data-toggle="modal" data-target="#exampleModal2">Billing</a></li>
-                                  <li><a href="{% static 'images/regulationsAzteca.pdf' %}">Aztec regulation</a></li>
+                                  <li><a href="{% static 'images/regulationsAzteca.pdf' %}">Azteca Regulation</a></li>
                                   
                               
                               </ul>
@@ -1670,7 +1335,7 @@
                           </div>
       
                           </div>
-                          <h2 class="text-center text-white pt-4">FOR A TRANSCENDENT MEXICO</h2>
+                          <h2 class="text-center text-white pt-4">"FOR A TRANSCENDENT MEXICO"</h2>
                           </div>
                           </div>
       
@@ -1710,16 +1375,9 @@
     <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN " crossorigin="anonymous "></script> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js " integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx " crossorigin="anonymous "></script>
     <script src="{% static 'js/owl.carousel.min.js' %} "></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js " integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin=" anonymous "></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mb.YTPlayer/3.3.8/jquery.mb.YTPlayer.min.js " integrity="sha512-jI/qyLWsZ9Tk0zrPfJgRFV5f0E/jGboe1Ellx881310LBvxDuKY5QX71GnBivDmBpsW12Wcrqrg48wN5/x3mjQ==" crossorigin=" anonymous "></script>
     <script src="{% static 'js/index.js' %} "></script>
-    <script>
-        $(document).ready(function() {
-            jQuery.fn.carousel.Constructor.TRANSITION_DURATION = 2000 // 2 seconds
-        });
-    </script>
-    <script>
-        $('.owl-slide-3').owlCarousel({
+    <!-- <script>
+        $('.owl-carousel-3').owlCarousel({
             loop: true,
             margin: 10,
             nav: true,
@@ -1735,26 +1393,8 @@
                 }
             }
         })
-    </script>
-    <!-- 
-        <script>
-            $('.owl-slide').owlCarousel({
-                loop: true,
-                margin: 10,
-                nav: true,
-                responsive: {
-                    0: {
-                        items: 1
-                    },
-                    600: {
-                        items: 2
-                    },
-                    1000: {
-                        items: 3
-                    }
-                }
-            })
-        </script> -->
+    </script> -->
+
 
     <script>
         $('.owl-slide').owlCarousel({
@@ -1792,16 +1432,17 @@
             }
         });
     </script>
-    <script>
+    
+     <script>
         var $owl_carousel_3col = $('.owl-carousel-3col');
         if ($owl_carousel_3col.length > 0) {
-            if (!$owl_carousel_3col.hasClass("owl-carousel ")) {
-                $owl_carousel_3col.addClass("owl-carousel owl-theme ");
+            if (!$owl_carousel_3col.hasClass("owl-carousel")) {
+                $owl_carousel_3col.addClass("owl-carousel owl-theme");
             }
             $owl_carousel_3col.each(function() {
-                var data_dots = ($(this).data("dots ") === undefined) ? false : $(this).data("dots ");
-                var data_nav = ($(this).data("nav ") === undefined) ? false : $(this).data("nav ");
-                var data_duration = ($(this).data("duration ") === undefined) ? 4000 : $(this).data("duration ");
+                var data_dots = ($(this).data("dots") === undefined) ? false : $(this).data("dots");
+                var data_nav = ($(this).data("nav") === undefined) ? false : $(this).data("nav");
+                var data_duration = ($(this).data("duration") === undefined) ? 4000 : $(this).data("duration");
                 $(this).owlCarousel({
                     autoplay: true,
                     autoplayTimeout: data_duration,
@@ -1810,7 +1451,7 @@
                     margin: 15,
                     dots: data_dots,
                     nav: data_nav,
-                    navText: ['<i class="fa fa-chevron-left "></i>', '<i class="fa fa-chevron-right "></i>'],
+                    navText: ['<i class="fa fa-chevron-left"></i>', '<i class="fa fa-chevron-right"></i>'],
                     responsive: {
                         0: {
                             items: 1,
@@ -1842,6 +1483,51 @@
             });
         }
     </script>
+    <script>
+        filterSelection("Master'sDegree")
+        function filterSelection(c) {
+          var x, i;
+          x = document.getElementsByClassName("column");
+          if (c == "all") c = "";
+          for (i = 0; i < x.length; i++) {
+            w3RemoveClass(x[i], "show");
+            if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+          }
+        }
+        
+        function w3AddClass(element, name) {
+          var i, arr1, arr2;
+          arr1 = element.className.split(" ");
+          arr2 = name.split(" ");
+          for (i = 0; i < arr2.length; i++) {
+            if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+          }
+        }
+        
+        function w3RemoveClass(element, name) {
+          var i, arr1, arr2;
+          arr1 = element.className.split(" ");
+          arr2 = name.split(" ");
+          for (i = 0; i < arr2.length; i++) {
+            while (arr1.indexOf(arr2[i]) > -1) {
+              arr1.splice(arr1.indexOf(arr2[i]), 1);     
+            }
+          }
+          element.className = arr1.join(" ");
+        }
+        
+        
+        // Add active class to the current button (highlight it)
+        var btnContainer = document.getElementById("myBtnContainer");
+        var btns = btnContainer.getElementsByClassName("btn");
+        for (var i = 0; i < btns.length; i++) {
+          btns[i].addEventListener("click", function(){
+            var current = document.getElementsByClassName("active");
+            current[0].className = current[0].className.replace(" active", "");
+            this.className += " active";
+          });
+        }
+        </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js " integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g==" crossorigin=" anonymous "></script>
     <script>
         new WOW().init();

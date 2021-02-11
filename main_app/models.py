@@ -297,3 +297,21 @@ class nonDiscriminationPolicy(models.Model):
     heading = models.CharField(max_length=50)
     image = models.FileField()
     content = models.TextField()
+
+
+class requirementHeader(models.Model):
+    id = models.AutoField(primary_key=True)
+    heading = models.CharField(max_length=300)
+    subHeading = models.CharField(max_length=700, blank=True)
+    image = models.FileField()
+
+    def __str__(self):
+        return self.heading
+
+class requirementContent(models.Model):
+    id = models.AutoField(primary_key=True)
+    header = models.ForeignKey('requirementHeader',on_delete=models.CASCADE)
+    content = models.TextField()
+
+    def __str__(self):
+        return self.content
