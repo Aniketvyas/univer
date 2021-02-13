@@ -617,7 +617,7 @@
         <a href="#"><img src="{% static 'images/youtube-3 (1).svg' %}" class="youtube"></a>
         <a href="#"><img src="{% static 'images/whatsapp-symbol.svg'%}" class="youtube"></a>
     </div>
-    <section class="sticky-top wow fadeInDown" data-wow-delay="0.7s" style="visibility: visible; animation-delay: 1s; animation-name: fadeInDown;" id="navbar">
+    <section class="fixed-top click-navbar" id="navbar">
 
         <div id='top-nav'>
             <div class="container-fluid ml-auto pt-3">
@@ -638,7 +638,7 @@
 
         <nav class="navbar navbar-expand-xl navbar-light">
 
-            <a class="navbar-brand" href="index"><img src="{% static 'images/testLogo.svg' %}"></a>
+            <a class="navbar-brand" href="/"><img src="{% static 'images/testLogo.svg' %}"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -646,8 +646,8 @@
 
             <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item dropdown color-blue pl-2">
-                        <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <li class="nav-item dropdown color-blue ml-2">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     About Us
             </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -657,8 +657,101 @@
                         </div>
                     </li>
 
-                    <li class="nav-item dropdown color-blue pl-2">
-                        <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <li class="nav-item dropdown color-blue ml-2">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">
+                    Academics
+            </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Departments</a>
+                            <a class="dropdown-item" href="/faculty">Faculty</a>
+                            <a class="dropdown-item" href="/gradingSystem">Grading System</a>
+                            <a class="dropdown-item" href="/studentFilesPolicy">Student Files Policy</a>
+                            <a class="dropdown-item" href="/thesisPolicy">Thesis Policy</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown ml-2">
+                        <a class="nav-link dropdown-toggle " href="#dropdown-menu" id="navbarDropdown" role="button" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">
+                Admissions
+            </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/requirement">Requirements</a>
+                            <a class="dropdown-item" href="/refundPolicy">Refund Policy</a>
+                            <a class="dropdown-item" href="/nonDiscriminationPolicy">Non-Discrimination Policy </a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown ml-2">
+                        <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">
+                Educational Offer
+            </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            {% for education in educationalOffering %}
+                            <a class="dropdown-item" href="/educationalOffering/{{education.id}}">{{education.name}}</a> {% endfor %}
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown ml-2">
+                        <a class="nav-link dropdown-toggle " href="# " id="navbarDropdown" role="button " data-toggle="dropdown"  aria-haspopup="true " aria-expanded="false ">
+            Recognitions
+            </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown ">
+                            <a class="dropdown-item" href="/accreditation">Accreditation</a>
+                            <a class="dropdown-item" href="/describingAccreditation ">Describing Accreditation</a>
+                            <a class="dropdown-item" href="/afterGraduationServices">After Graduation Services</a>
+                        </div>
+                    </li>
+                    <li class="nav-item ml-2"><a class="nav-link" href="/gallery">Gallery</a></li>
+                    <li class="nav-item ml-2"><a class="nav-link" href="/contact">Contact Us</a></li>
+                    <li class="nav-link display-none"> </li>
+                    <li class="nav-link display-none"><a href="#" class="btn manual-btn btn-sm mt-2" data-toggle="modal" data-target="#myModal">Login</a>
+                        <button type="button" class="btn manual-btn btn-sm mt-2" data-toggle="modal" data-target="#form">Apply Now</button></li>
+                </ul>
+
+            </div>
+        </nav>
+
+    </section>
+
+    <section class="fixed-top hover-navbar" id="navbar">
+
+        <div id='top-nav'>
+            <div class="container-fluid ml-auto pt-3">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 pl-5">
+                        <a href="tel:+525559863050" style="color:white;"><i class="fa fa-phone"></i> + 52 55 5986-3050</a>
+                    </div>
+                    <div class="col-xl-5 col-lg-4">
+                        <a href="mailto:international@univ-azteca.edu.mx" style="color:white;"><i class="fa fa-envelope mr-1"></i>  international@univ-azteca.edu.mx</a>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 mt-2 ml-auto">
+                        <button type="button" class="btn manual-btn btn-sm " data-toggle="modal" data-target="#myModal">Login</button>
+                        <button type="button " class="btn manual-btn btn-sm" data-toggle="modal" data-target="#form">Apply Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="navbar navbar-expand-xl navbar-light">
+
+            <a class="navbar-brand" href="/"><img src="{% static 'images/testLogo.svg' %}"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+            <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown color-blue ml-2">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"   aria-haspopup="true" aria-expanded="false">
+                    About Us
+            </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/visionMission">Vision and Mission</a>
+                            <a class="dropdown-item" href="/chancellorsMessage">Chancellor Message</a>
+
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown color-blue ml-2">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"   aria-haspopup="true" aria-expanded="false">
                     Academics
             </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -669,8 +762,8 @@
                             <a class="dropdown-item" href="/thesisPolicy">Thesis Policy</a>
                         </div>
                     </li>
-                    <li class="nav-item dropdown pl-2">
-                        <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <li class="nav-item dropdown ml-2">
+                        <a class="nav-link dropdown-toggle " href="#dropdown-menu" id="navbarDropdown" role="button"   aria-haspopup="true" aria-expanded="false">
                 Admissions
             </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -679,29 +772,29 @@
                             <a class="dropdown-item" href="/nonDiscriminationPolicy">Non-Discrimination Policy </a>
                         </div>
                     </li>
-                    <li class="nav-item dropdown pl-2">
-                        <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <li class="nav-item dropdown ml-2">
+                        <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button"   aria-haspopup="true" aria-expanded="false">
                 Educational Offer
             </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             {% for education in educationalOffering %}
-                            <a class="dropdown-item" style="color:#254aa5; " href="/educationalOffering/{{education.id}}">{{education.name}}</a> {% endfor %}
+                            <a class="dropdown-item" href="/educationalOffering/{{education.id}}">{{education.name}}</a> {% endfor %}
                         </div>
                     </li>
-                    <li class="nav-item dropdown pl-2">
-                        <a class="nav-link dropdown-toggle " href="# " id="navbarDropdown" role="button " data-toggle="dropdown" aria-haspopup="true " aria-expanded="false ">
+                    <li class="nav-item dropdown ml-2">
+                        <a class="nav-link dropdown-toggle " href="# " id="navbarDropdown" role="button "   aria-haspopup="true " aria-expanded="false ">
             Recognitions
             </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown ">
-                            <a class="dropdown-item"  href="/accreditation">Accreditation</a>
-                            <a class="dropdown-item"  href="/describingAccreditation ">Describing Accreditation</a>
-                            <a class="dropdown-item"  href="/afterGraduationServices">After Graduation Services</a>
+                            <a class="dropdown-item" href="/accreditation">Accreditation</a>
+                            <a class="dropdown-item" href="/describingAccreditation ">Describing Accreditation</a>
+                            <a class="dropdown-item" href="/afterGraduationServices">After Graduation Services</a>
                         </div>
                     </li>
-                    <li class="nav-item pl-2"><a class="nav-link " href="/gallery">Gallery</a></li>
-                    <li class="nav-item pl-2"><a class="nav-link " href="/contact">Contact Us</a></li>
+                    <li class="nav-item ml-2"><a class="nav-link" href="/gallery">Gallery</a></li>
+                    <li class="nav-item ml-2"><a class="nav-link" href="/contact">Contact Us</a></li>
                     <li class="nav-link display-none"> </li>
-                    <li class="nav-link display-none"><a href="#" class="btn manual-btn btn-sm mt-2" data-toggle="modal" data-target="#login-modal">Login</a>
+                    <li class="nav-link display-none"><a href="#" class="btn manual-btn btn-sm mt-2" data-toggle="modal" data-target="#myModal">Login</a>
                         <button type="button" class="btn manual-btn btn-sm mt-2" data-toggle="modal" data-target="#form">Apply Now</button></li>
                 </ul>
 
@@ -709,7 +802,7 @@
         </nav>
 
     </section>
-    <section class="landing-page">
+    <section class="landing-page mt-5">
         <div class="container">
             <div class="landing-content">
                 <div class="container">

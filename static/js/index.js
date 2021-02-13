@@ -1,59 +1,22 @@
-const $dropdown = $(".dropdown");
-const $dropdownToggle = $(".dropdown-toggle");
-const $dropdownMenu = $(".dropdown-menu");
-const showClass = "show";
+// var a = document.getElementsByClassName('dropdown');
+//   a.addEventListener('click',function(){
+//     if (window.innerWidth<1200){
+//       console.log(true); 
+//     var b = document.children('dropdown-menu').style.display="block";
+//     }
+//   });
+// $('dropdown').click(function(){
+//   if(window.innerWidth>1200){
+//     $(".dropdown-toggle").attr("data-toggle", "dropdown");
+//   }
+// })
 
-$(window).on("load resize", function() {
-    if (this.matchMedia("(min-width: 768px)").matches) {
-        $dropdown.hover(
-            function() {
-                const $this = $(this);
-                $this.addClass(showClass);
-                $this.find($dropdownToggle).attr("aria-expanded", "true");
-                $this.find($dropdownMenu).addClass(showClass);
-            },
-            function() {
-                const $this = $(this);
-                $this.removeClass(showClass);
-                $this.find($dropdownToggle).attr("aria-expanded", "false");
-                $this.find($dropdownMenu).removeClass(showClass);
-            }
-        );
-    } else {
-        $dropdown.off("mouseenter mouseleave");
-    }
-});
-
-
-
-
-$(document).ready(function() {
-    // Add smooth scrolling to all links
-    $("a").on('click', function(event) {
-
-        // Make sure this.hash has a value before overriding default behavior
-        if (this.hash !== "") {
-            // Prevent default anchor click behavior
-            event.preventDefault();
-
-            // Store hash
-            var hash = this.hash;
-
-            // Using jQuery's animate() method to add smooth page scroll
-            // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-            $('html, body').animate({
-                scrollTop: $(hash).offset().top
-            }, 800, function() {
-
-                // Add hash (#) to URL when done scrolling (default click behavior)
-                window.location.hash = hash;
-            });
-        } // End if
-    });
-});
-
-
-        var degreeMenu = document.getElementById('degree');
+$('.dropdown').hover(function() {
+    $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
+  }, function() {
+    $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+  });
+var degreeMenu = document.getElementById('degree');
         var specializationMenu = document.getElementById('specialization');
         // console.log(specializationMenu[0].data);
 
@@ -73,56 +36,23 @@ $(document).ready(function() {
             $("#specialization").val($("#expertCat option:visible:first").val());
             
         });
+        
+        
+var a = document.getElementsByClassName('dropdown-toggle')
+for(i=0;i<a.length;i++){
+    a[i].addEventListener('click',function(){
+        console.log(i);
+        console.log(a);
+    })
+}
+$(document).click(function (e) {
+    e.stopPropagation();
+    var container = $(".dropDown");
 
-        $('.dropdown').on('show.bs.dropdown', function(e){
-            $(this).find('.dropdown-menu').removeClass('lightSpeedOut').addClass('lightSpeedIn').show();
-        });
-        
-        $('.dropdown').on('hide.bs.dropdown', function(e){
-            $(this).find('.dropdown-menu').removeClass('lightSpeedIn').addClass('lightSpeedOut');
-        });
+    //check if the clicked area is dropDown or not
+    if (container.has(e.target).length === 0) {
+        $('.subMenu').hide();
+    }
+})
 
-        
-        function filterSelection(c) {
-          var x, i;
-          x = document.getElementsByClassName("column");
-          if (c == "all") c = "";
-          for (i = 0; i < x.length; i++) {
-            w3RemoveClass(x[i], "show");
-            if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
-          }
-        }
-        
-        
-        function w3AddClass(element, name) {
-          var i, arr1, arr2;
-          arr1 = element.className.split(" ");
-          arr2 = name.split(" ");
-          for (i = 0; i < arr2.length; i++) {
-            if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
-          }
-        }
-        
-        function w3RemoveClass(element, name) {
-          var i, arr1, arr2;
-          arr1 = element.className.split(" ");
-          arr2 = name.split(" ");
-          for (i = 0; i < arr2.length; i++) {
-            while (arr1.indexOf(arr2[i]) > -1) {
-              arr1.splice(arr1.indexOf(arr2[i]), 1);     
-            }
-          }
-          element.className = arr1.join(" ");
-        }
-        
-        
-        // Add active class to the current button (highlight it)
-        var btnContainer = document.getElementById("myBtnContainer");
-        var btns = btnContainer.getElementsByClassName("btn");
-        for (var i = 0; i < btns.length; i++) {
-          btns[i].addEventListener("click", function(){
-            var current = document.getElementsByClassName("active");
-            current[0].className = current[0].className.replace(" active", "");
-            this.className += " active";
-          });
-        }
+//  console.log(document.getElementsByClassName('dropdown-toggle')[0].ariaExpanded);

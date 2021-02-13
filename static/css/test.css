@@ -345,7 +345,7 @@
     }
     
     .main-container section.hire-developer .main-content .hire-content .image-container .img-content {
-        margin: -20px;
+        margin: -30px;
     }
     .main-container section.hire-developer .main-content .hire-content .image-container .rotating-images {
         position: relative;
@@ -410,6 +410,9 @@
     .main-container section.hire-developer .main-content .hire-content {
         padding-right: 50px;
     }
+    .main-container section.hire-developer .main-content .hire-content .image-container .img-content {
+        margin: -30px;
+    }
     .main-container section.hire-developer .main-content .hire-content .image-container .rotating-images .img-box img {
         height: 30px;
     }
@@ -425,6 +428,9 @@
     }
     .main-container section.hire-developer .clip-section {
         height: 60px;
+    }
+    .main-container section.hire-developer .main-content .hire-content .image-container .img-content {
+        margin: -30px;
     }
     .main-container section.hire-developer .main-content {
         -webkit-box-orient: vertical;
@@ -530,7 +536,7 @@
     }
  
     .main-container section.hire-developer .main-content .hire-content .image-container .img-content {
-        margin: -15px;
+        margin: -25px;
     }
     .main-container section.hire-developer .main-content .hire-content .image-container .rotating-images {
         position: relative;
@@ -583,7 +589,7 @@
         height: 100px;
     }
     .main-container section.hire-developer .main-content .hire-content .image-container .rotating-images .img-box {
-        margin: -15px;
+        margin: -25px;
     }
     .main-container section.hire-developer .main-content .hire-content .image-container .rotating-images .img-box img {
         height: 25px;
@@ -602,7 +608,7 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        margin: -12px;
+        margin: -22px;
     }
     
     .main-container section.hire-developer .main-content .hire-content .image-container .img-content p {
@@ -644,12 +650,12 @@
 
    
     .main-container section.hire-developer .main-content .hire-content .image-container .img-content {
-        margin: -15px;
+        margin: -35px;
     }
     .main-container section.hire-developer .main-content .hire-content .image-container .rotating-images {
         position: relative;
-        width: 18em;
-        height: 18em;
+        width: 20em;
+        height: 20em;
         border-radius: 50%;
     }
     .main-container section.hire-developer .main-content .hire-content .image-container .rotating-images>.img-box {
@@ -698,9 +704,10 @@
         height: 100px;
     }
     .main-container section.hire-developer .main-content .hire-content .image-container .rotating-images .img-box {
-        margin: -15px;
+        margin: -25px;
     }
     .main-container section.hire-developer .main-content .hire-content .image-container .rotating-images .img-box img {
         height: 10px;
     }
 }
+

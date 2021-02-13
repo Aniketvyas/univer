@@ -1,130 +1,430 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'css/rotatorTest.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <style>
+        .item {
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+}
+.img-prop{
+    object-fit:cover;
+    border-radius:10px;
+    height:250px;
+}
+.course-single-item .course-top-part a:hover {
+    color: #e79800
+}
+
+.course-single-item .course-top-part a {
+    transition: .35s;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    min-height: 40px;
+    color: #111;
+    margin: 5px 0 10px;
+    font-weight: 600;
+    line-height: 25px
+}
+
+.course-single-item .course-thumb {
+    position: relative
+}
+
+.course-single-item .course-top-meta {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .6);
+    padding: 4px 20px;
+    border-radius: 0 4px 0 0
+}
+
+.course-single-item .course-top-meta li {
+    color: #fff;
+    font-size: 13px
+}
+
+.course-single-item .course-top-meta ul li i {
+    vertical-align: middle;
+    margin-right: 8px
+}
+
+.course-single-item .course-details {
+    position: relative
+}
+
+.course-single-item .author-thumb {
+    position: absolute;
+    top: 15px;
+    right: 15px
+}
+
+.course-single-item .author-thumb img {
+    width: 42px
+}
+
+.course-single-item .course-meta {
+    padding: 15px 20px;
+    border-top: 1px solid #eee;
+    position: relative
+}
+
+.course-single-item .course-meta ul li {
+    font-size: 14px;
+    vertical-align: middle;
+    font-weight: 400
+}
+
+.course-single-item .course-meta ul li i {
+    vertical-align: middle;
+    margin-top: -4px;
+    margin-right: 8px
+}
+
+.course-single-item .course-meta .course-tag {
+    position: absolute;
+    top: 15px;
+    right: 15px
+}
+
+.course-single-item .course-meta .course-tag h5 {
+    margin: 0;
+    padding: 5px 18px;
+    border-radius: 0;
+    color: #fff;
+    font-size: 12px
+}
+
+/* main code for positioning at top right */
+.owl-carousel.owl-nav-top .owl-nav {
+    top: -50px;
+    right: 80px;
+    position: absolute;
+}
+
+/* main code ends */
+.owl-carousel.owl-nav-top .owl-nav .owl-prev {
+padding: 6px 18px !important;
+    left: -30px;
+}
+.owl-carousel.owl-nav-top .owl-nav .owl-next {
+padding: 6px 18px !important;
+    left: -30px;
+}
+.owl-carousel.owl-nav-top .owl-nav button {
+    background: #e79800 !important;
+}
+    </style>
 </head>
+
 <body>
-    
 
-    <div class="main-container ">
-        <section class="hire-developer ">
-            <div class="container-fluid ">
-                <div class="main-content ">
-                    <div class="heading ">
-                        <div class="heading-content ">
-                            <h2 class="text-uppercase wow fadeInLeft " style="visibility: visible;animation-name:fadeInLeft; ">Grab Knowledge</h2>
-                            <p class="sub-heading wow fadeIn " data-wow-delay="0.3s " style="visibility: visible;animation-name:fadeIn ">your Learnings, our expertise</p>
-                            <p class="sub-heading-content wow fadeIn " data-wow-delay="0.5s " style="visibility: visible;animation-name:fadeIn ">As a dynamic university, we strive to offer,through effective teaching, quality education founded on the idea that one’s intellectual and personal development go hand in hand, complementing and fulfilling each other.</p>
-                        </div>
+
+    <section data-bg-color="#f9f9f9">
+        <div class="container pt-5 pb-4 pt-sm-2 pb-sm-2">
+            <div class="section-title mb-0">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="mt-0 mb-0 mt-sm-30 font-weight-600 theme_color_1">News & Updates</h2>
+                        <h4 class=" theme_color_2 mb-20"><i>SPSU excels in several domains everyday.</i></h4>
                     </div>
-                    <div class="hire-content wow fadeInRight " style=" visibility: visible; animation-name:fadeInRight ">
-                        <div class="image-container ">
-                            <div class="img-content ">
-                                <p>Android</p>
-                            </div>
-                            <div class="img-content ">
-                                <p>AngularJS</p>
-                            </div>
-                            <div class="img-content ">
-                                <p>Drupal</p>
-                            </div>
-                            <div class="img-content ">
-                                <p>Ionic</p>
-                            </div>
-                            <div class="img-content ">
-                                <p>iOS</p>
-                            </div>
-                            <div class="img-content ">
-                                <p>Java</p>
-                            </div>
-                            <div class="img-content ">
-                                <p>Laravel</p>
-                            </div>
-                            <div class="img-content ">
-                                <p>Magento</p>
-                            </div>
-                            <div class="img-content ">
-                                <p>ReactJS</p>
-                            </div>
-                            <div class="img-content ">
-                                <p>Prestashop</p>
-                            </div>
-                            <div class="img-content ">
-                                <p>Python</p>
-                            </div>
-                            <div class="img-content ">
-                                <p>Ruby on Rails</p>
-                            </div>
-                            <div class="img-content ">
-                                <p>Symfony</p>
-                            </div>
-                            <div class="img-content ">
-                                <p>WordPress</p>
-                            </div>
-                            <div class="rotating-images ">
-                                <div class="img-box ">
-                                    <img src="{% static 'images/tech/android.png' %} ">
+                </div>
+            </div>
+            <div class="section-content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="owl-carousel-3col owl-nav-top mt-5" data-duration="8000" data-nav="true">
+                            <div class="item">
+                                <div class="course-single-item bg-white border-1px clearfix hvr-float">
+                                    <div class="course-thumb pt-5 ">
+                                        <img class="img-prop" alt="" width="100%"
+                                            data-height="250px"
+                                            src="https://news.spsu.ac.in/wp-content/uploads/2021/01/IMG_20210126_091405.jpg">
+                                    </div>
+                                    <div class="course-details clearfix p-1  pt-1 pb-1">
+                                        <div class="course-top-part">
+                                            <p class="font-13 mt-0 text-uppercase mb-5 theme_color_2"> <i
+                                                    class="fa fa-calendar" aria-hidden="true"></i>
+                                                29 Jan 2021 </p>
+                                            <a href="https://news.spsu.ac.in/spsu-applauds-the-countrys-progress-in-the-72-nd-republic-day-celebration/"
+                                                target="_blank" class="font-16">
+                                                SPSU applauds the country’s progress in the 72 nd Republic Day
+                                                Celebration </a>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="img-box ">
-                                    <img src="{% static 'images/tech/android.png' %} ">
+                            </div>
+                            <div class="item">
+                                <div class="course-single-item bg-white border-1px clearfix hvr-float">
+                                    <div class="course-thumb pt-5 ">
+                                        <img class="img-prop" alt="" width="100%"
+                                            data-height="250px"
+                                            src="https://news.spsu.ac.in/wp-content/uploads/2021/01/Guest-lecture-organized-on-New-Education-Policy-For-Technological-and-Management-Universities.jpg">
+                                    </div>
+                                    <div class="course-details clearfix p-1  pt-1 pb-1">
+                                        <div class="course-top-part">
+                                            <p class="font-13 mt-0 text-uppercase mb-5 theme_color_2"> <i
+                                                    class="fa fa-calendar" aria-hidden="true"></i>
+                                                15 Jan 2021 </p>
+                                            <a href="https://news.spsu.ac.in/guest-lecture-organized-on-new-education-policy-for-technological-and-management-universities/"
+                                                target="_blank" class="font-16">
+                                                Guest lecture organized on New Education Policy For Technological and
+                                                Management Universities </a>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="img-box ">
-                                    <img src="{% static 'images/tech/android.png' %} ">
+                            </div>
+                            <div class="item">
+                                <div class="course-single-item bg-white border-1px clearfix hvr-float">
+                                    <div class="course-thumb pt-5 ">
+                                        <img class="img-prop" alt="" width="100%"
+                                            data-height="250px"
+                                            src="https://news.spsu.ac.in/wp-content/uploads/2020/10/IMG_20201027_120230.jpg">
+                                    </div>
+                                    <div class="course-details clearfix p-1 pt-1 pb-1">
+                                        <div class="course-top-part">
+                                            <p class="font-13 mt-0 text-uppercase mb-5 theme_color_2"> <i
+                                                    class="fa fa-calendar" aria-hidden="true"></i>
+                                                30 Oct 2020 </p>
+                                            <a href="https://news.spsu.ac.in/spsu-msme-initiativelecture-on-entrepreneurship-as-a-career-27-oct-2020/"
+                                                target="_blank" class="font-16">
+                                                SPSU-MSME Initiative:Lecture on 'Entrepreneurship as a Career', 27 Oct
+                                                2020 </a>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="img-box ">
-                                    <img src="{% static 'images/tech/android.png' %} ">
+                            </div>
+                            <div class="item">
+                                <div class="course-single-item bg-white border-1px clearfix hvr-float">
+                                    <div class="course-thumb pt-5 ">
+                                        <img class="img-prop" alt="" width="100%"
+                                            data-height="250px"
+                                            src="https://news.spsu.ac.in/wp-content/uploads/2020/10/IMG_20201006_161613-2.jpg">
+                                    </div>
+                                    <div class="course-details clearfix p-1  pt-1 pb-1">
+                                        <div class="course-top-part">
+                                            <p class="font-13 mt-0 text-uppercase mb-5 theme_color_2"> <i
+                                                    class="fa fa-calendar" aria-hidden="true"></i>
+                                                08 Oct 2020 </p>
+                                            <a href="https://news.spsu.ac.in/ieee-day-celebrated-at-sir-padampat-singhania-university-on-october-6-2020/"
+                                                target="_blank" class="font-16">
+                                                IEEE Day Celebrated at SIR PADAMPAT SINGHANIA UNIVERSITY on October 6,
+                                                2020 </a>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="img-box ">
-                                    <img src="{% static 'images/tech/android.png' %} ">
+                            </div>
+                            <div class="item">
+                                <div class="course-single-item bg-white border-1px clearfix hvr-float">
+                                    <div class="course-thumb pt-5 ">
+                                        <img class="img-prop" alt="" width="100%"
+                                            data-height="250px"
+                                            src="https://news.spsu.ac.in/wp-content/uploads/2020/09/IMG_20200915_105505.jpg">
+                                    </div>
+                                    <div class="course-details clearfix p-1  pt-1 pb-1">
+                                        <div class="course-top-part">
+                                            <p class="font-13 mt-0 text-uppercase mb-5 theme_color_2"> <i
+                                                    class="fa fa-calendar" aria-hidden="true"></i>
+                                                16 Sep 2020 </p>
+                                            <a href="https://news.spsu.ac.in/inaugural-of-y-p-singhania-memorial-lecture-series-on-september-15-2020-at-sir-padampat-singhania-university-udaipur/"
+                                                target="_blank" class="font-16">
+                                                Inaugural of Y P Singhania Memorial Lecture Series on September 15, 2020
+                                                at Sir Padampat Singhania University, Udaipur </a>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="img-box ">
-                                    <img src="{% static 'images/tech/android.png' %} ">
+                            </div>
+                            <div class="item">
+                                <div class="course-single-item bg-white border-1px clearfix hvr-float">
+                                    <div class="course-thumb pt-5 ">
+                                        <img class="img-prop" alt="" width="100%"
+                                            data-height="250px"
+                                            src="https://news.spsu.ac.in/wp-content/uploads/2020/09/IMG_20200915_122632.jpg">
+                                    </div>
+                                    <div class="course-details clearfix p-1  pt-1 pb-1">
+                                        <div class="course-top-part">
+                                            <p class="font-13 mt-0 text-uppercase mb-5 theme_color_2"> <i
+                                                    class="fa fa-calendar" aria-hidden="true"></i>
+                                                16 Sep 2020 </p>
+                                            <a href="https://news.spsu.ac.in/engineers-day-celebration-and-felicitation-ceremony-of-senior-faculty-members-at-spsu-on-september-15-2020/"
+                                                target="_blank" class="font-16">
+                                                Engineer’s Day Celebration and Felicitation Ceremony of Senior Faculty
+                                                Members at SPSU on September 15, 2020 </a>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="img-box ">
-                                    <img src="{% static 'images/tech/android.png' %} ">
-                                </div>
-                                <div class="img-box ">
-                                    <img src="{% static 'images/tech/android.png' %} ">
-                                </div>
-                                <div class="img-box ">
-                                    <img src="{% static 'images/tech/android.png' %} ">
-                                </div>
-                                <div class="img-box ">
-                                    <img src="{% static 'images/tech/android.png' %} ">
-                                </div>
-                                <div class="img-box ">
-                                    <img src="{% static 'images/tech/android.png' %} ">
-                                </div>
-                                <div class="img-box ">
-                                    <img src="{% static 'images/tech/android.png' %} ">
-                                </div>
-                                <div class="img-box ">
-                                    <img src="{% static 'images/tech/android.png' %} ">
-                                </div>
-                                <div class="img-box ">
-                                    <img src="{% static 'images/tech/android.png' %} ">
-                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="course-single-item bg-white border-1px clearfix hvr-float">
+                                    <div class="course-thumb pt-5 ">
+                                        <img class="img-prop" alt="" width="100%"
+                                            data-height="250px"
+                                            src="https://news.spsu.ac.in/wp-content/uploads/2020/08/PANO_20200815_093459-2-scaled.jpg">
+                                    </div>
+                                    <div class="course-details clearfix p-1  pt-1 pb-1">
+                                        <div class="course-top-part">
+                                            <p class="font-13 mt-0 text-uppercase mb-5 theme_color_2"> <i
+                                                    class="fa fa-calendar" aria-hidden="true"></i>
+                                                18 Aug 2020 </p>
+                                            <a href="https://news.spsu.ac.in/spsu-salutes-the-martyrs-covid-19-warriors-and-economy-saviours-on-the-74-th-independence-day/"
+                                                target="_blank" class="font-16">
+                                                SPSU salutes the Martyrs, COVID-19 Warriors and Economy Saviours on the
+                                                74 th Independence Day </a>
 
-
-                                <div class="middle-img ">
-                                    <img src="{% static 'images/undraw_education_f8ru.svg' %} " alt=" ">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="course-single-item bg-white border-1px clearfix hvr-float">
+                                    <div class="course-thumb pt-5 ">
+                                        <img class="img-prop" alt="" width="100%"
+                                            data-height="250px"
+                                            src="https://news.spsu.ac.in/wp-content/uploads/2020/05/spsu-camp.jpg">
+                                    </div>
+                                    <div class="course-details clearfix p-1  pt-1 pb-1">
+                                        <div class="course-top-part">
+                                            <p class="font-13 mt-0 text-uppercase mb-5 theme_color_2"> <i
+                                                    class="fa fa-calendar" aria-hidden="true"></i>
+                                                14 May 2020 </p>
+                                            <a href="https://news.spsu.ac.in/spsu-hosts-the-largest-relief-camp-cum-quarantine-facility-to-the-migrant-workers-of-up-and-bihar/"
+                                                target="_blank" class="font-16">
+                                                SPSU HOSTS THE LARGEST RELIEF CAMP CUM QUARANTINE FACILITY TO THE
+                                                MIGRANT WORKERS OF UP AND BIHAR. </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="course-single-item bg-white border-1px clearfix hvr-float">
+                                    <div class="course-thumb pt-5 ">
+                                        <img class="img-prop" alt="" width="100%"
+                                            data-height="250px"
+                                            src="https://news.spsu.ac.in/wp-content/uploads/2020/03/spsu1.jpg">
+                                    </div>
+                                    <div class="course-details clearfix p-1  pt-1 pb-1">
+                                        <div class="course-top-part">
+                                            <p class="font-13 mt-0 text-uppercase mb-5 theme_color_2"> <i
+                                                    class="fa fa-calendar" aria-hidden="true"></i>
+                                                07 Mar 2020 </p>
+                                            <a href="https://news.spsu.ac.in/international-womens-day-celebration-nahi-means-no-workshop-at-sir-padampat-singhania-university-udaipur/"
+                                                target="_blank" class="font-16">
+                                                INTERNATIONAL WOMEN’S DAY CELEBRATION: ‘NAHI MEANS NO’ WORKSHOP AT SIR
+                                                PADAMPAT SINGHANIA UNIVERSITY, UDAIPUR </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="course-single-item bg-white border-1px clearfix hvr-float">
+                                    <div class="course-thumb pt-5 ">
+                                        <img class="img-prop" alt="" width="100%"
+                                            data-height="250px"
+                                            src="https://news.spsu.ac.in/wp-content/uploads/2020/03/spsu2.jpg">
+                                    </div>
+                                    <div class="course-details clearfix p-1  pt-1 pb-1">
+                                        <div class="course-top-part">
+                                            <p class="font-13 mt-0 text-uppercase mb-5 theme_color_2"> <i
+                                                    class="fa fa-calendar" aria-hidden="true"></i>
+                                                06 Mar 2020 </p>
+                                            <a href="https://news.spsu.ac.in/workshop-on-survival-skills-at-sir-padampat-singhania-university-udaipur/"
+                                                target="_blank" class="font-16">
+                                                WORKSHOP ON SURVIVAL SKILLS AT SIR PADAMPAT SINGHANIA UNIVERSITY,
+                                                UDAIPUR </a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
 
     <script type="text/javascript " src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js "></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js " integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx " crossorigin="anonymous "></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN " crossorigin="anonymous "></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js "
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx "
+        crossorigin="anonymous "></script>
+    <script src="{% static 'js/owl.carousel.min.js' %} "></script>
     <script src="{% static 'js/index.js' %} "></script>
+    <script>
+        var THEMEMASCOT = {};
+       THEMEMASCOT.isRTL = {
+           check: function() {
+               if ($("html").attr("dir") === "rtl") {
+                   return true;
+               } else {
+                   return false;
+               }
+           }
+       };
+       var $owl_carousel_3col = $('.owl-carousel-3col');
+       if ($owl_carousel_3col.length > 0) {
+           if (!$owl_carousel_3col.hasClass("owl-carousel")) {
+               $owl_carousel_3col.addClass("owl-carousel owl-theme");
+           }
+           $owl_carousel_3col.each(function() {
+               // console.log($(this).data("owl-dots"));
+               var data_dots = ($(this).data("dots") === undefined) ? false : $(this).data("dots");
+               // console.log(data_dots);
+               var data_nav = ($(this).data("nav") === undefined) ? false : $(this).data("nav");
+               var data_duration = ($(this).data("duration") === undefined) ? 4000 : $(this).data("duration");
+               $(this).owlCarousel({
+                   rtl: THEMEMASCOT.isRTL.check(),
+                   autoplay: true,
+                   autoplayTimeout: data_duration,
+                   loop: true,
+                   items: 3,
+                   margin: 15,
+                   dots: data_dots,
+                   nav: data_nav,
+                   navText: ['<i class="fa fa-chevron-left"></i>', '<i class="fa fa-chevron-right"></i>'],
+                   responsive: {
+                       0: {
+                           items: 1,
+                           center: false
+                       },
+                       480: {
+                           items: 1,
+                           center: false
+                       },
+                       600: {
+                           items: 1,
+                           center: false
+                       },
+                       750: {
+                           items: 2,
+                           center: false
+                       },
+                       960: {
+                           items: 2
+                       },
+                       1170: {
+                           items: 3
+                       },
+                       1300: {
+                           items: 3
+                       }
+                   }
+               });
+           });
+       }
+   </script>
 </body>
+
 </html>
