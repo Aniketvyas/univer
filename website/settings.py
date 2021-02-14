@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'o1)4d0&q3l)%=7-%s3)u8ol$!5lbay1!-5zj*&gd2mogzn*01)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://aniketvyas.herokuapp.com','127.0.0.1']
 
 
 # Application definition
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -124,6 +125,7 @@ STATICFILES_DIRS=[
     os.path.join(BASE_DIR,"static")
 ]
 STATIC_ROOT = os.path.join(BASE_DIR , "assests")
+# STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 
 MEDIA_URL = '/media/'
@@ -135,3 +137,8 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = 587 
 EMAIL_HOST_USER = 'vyasaniket6@gmail.com'
 EMAIL_HOST_PASSWORD = 'Dotnetframework@123'
+
+
+# import dj_database_url
+# db_from_env = dj_database_url.config(conn_max_age=500)
+# DATABASES['default'].update(db_from_env)
