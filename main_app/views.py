@@ -38,55 +38,62 @@ def index(request):
 
 
 def visionMission(request):
+    advantages = advantagesHeader.objects.all()
     education = educationalOffering.objects.all().order_by('priority')
     vision = visionAndMission.objects.get(category="VISION")
     mission = visionAndMission.objects.get(category="MISSION")
     spec = specialization.objects.all()
     program = degreeProgram.objects.all()
-    return render(request,'visionMission.html',{'spec':spec,'degree':program,'vision':vision,'mission':mission,'educationalOffering':education,'spec':spec})
+    return render(request,'visionMission.html',{'advantages':advantages,'spec':spec,'degree':program,'vision':vision,'mission':mission,'educationalOffering':education,'spec':spec})
 
 def chancellorMessag(request):
+    advantages = advantagesHeader.objects.all()
     education = educationalOffering.objects.all().order_by('priority')
     chancellorMessages = chancellorMessage.objects.all()
     spec = specialization.objects.all()
     program = degreeProgram.objects.all()
-    return render(request,'chancellorsMessage.html',{'spec':spec,'degree':program,'data':chancellorMessages,'educationalOffering':education})
+    return render(request,'chancellorsMessage.html',{'advantages':advantages,'spec':spec,'degree':program,'data':chancellorMessages,'educationalOffering':education})
 
 
 def facultys(request):
+    advantages = advantagesHeader.objects.all()
     education = educationalOffering.objects.all().order_by('priority')
     f = faculty.objects.all()
     spec = specialization.objects.all()
     program = degreeProgram.objects.all()
-    return render(request,'faculty.html',{'faculties':f,'educationalOffering':education,'spec':spec,'degree':program})
+    return render(request,'faculty.html',{'advantages':advantages,'faculties':f,'educationalOffering':education,'spec':spec,'degree':program})
 
 def departments(request):
     try:
+        advantages = advantagesHeader.objects.all()
         spec = specialization.objects.all()
         program = degreeProgram.objects.all()
-        return render(request,'departments.html',{'spec':spec,'degree':program})
+        return render(request,'departments.html',{'advantages':advantages,'spec':spec,'degree':program})
     except:
         return redirect('/404')
 
 
 
 def thesisPolicys(request):
+    advantages = advantagesHeader.objects.all()
     education = educationalOffering.objects.all().order_by('priority')
     t = thesisPolicy.objects.all()
     spec = specialization.objects.all()
     program = degreeProgram.objects.all()
-    return render(request,'thesisPolicy.html',{'thesis':t,'educationalOffering':education,'spec':spec,'degree':program})
+    return render(request,'thesisPolicy.html',{'advantages':advantages,'thesis':t,'educationalOffering':education,'spec':spec,'degree':program})
 
 
 def gradingSystems(request):
+    advantages = advantagesHeader.objects.all()
     education = educationalOffering.objects.all().order_by('priority')
     grades = gradeTable.objects.all()
     thesis = thesisEvaluation.objects.all()
     spec = specialization.objects.all()
     program = degreeProgram.objects.all()
-    return render(request,'gradingSystem.html',{'grades':grades,'educationalOffering':education,'thesisEvaluation':thesis,'spec':spec,'degree':program})
+    return render(request,'gradingSystem.html',{'advantages':advantages,'grades':grades,'educationalOffering':education,'thesisEvaluation':thesis,'spec':spec,'degree':program})
 
 def requirement(request):
+    advantages = advantagesHeader.objects.all()
     spec = specialization.objects.all()
     program = degreeProgram.objects.all()
     education = educationalOffering.objects.all().order_by('priority')
@@ -98,26 +105,29 @@ def requirement(request):
         dictionary={'header':i,'content':content}
         mainList.append(dictionary)
     print(mainList)
-    return render(request,'requirement.html',{'educationalOffering':education,'spec':spec,'degree':program,'data':mainList})
+    return render(request,'requirement.html',{'advantages':advantages,'educationalOffering':education,'spec':spec,'degree':program,'data':mainList})
 
 def refundPolicy(request):
+    advantages = advantagesHeader.objects.all()
     spec = specialization.objects.all()
     program = degreeProgram.objects.all()
     education = educationalOffering.objects.all().order_by('priority')
     steps = refundSteps.objects.all()
     charges= refundCharges.objects.all()
-    return render(request,'refundPolicy.html',{'educationalOffering':education,'steps':steps,'charges':charges,'spec':spec,'degree':program})
+    return render(request,'refundPolicy.html',{'advantages':advantages,'educationalOffering':education,'steps':steps,'charges':charges,'spec':spec,'degree':program})
 
 def nonDiscriminationPolicys(request):
+    advantages = advantagesHeader.objects.all()
     spec = specialization.objects.all()
     program = degreeProgram.objects.all()
     education = educationalOffering.objects.all().order_by('priority')
     policies = nonDiscriminationPolicy.objects.all()
-    return render(request,'nonDiscriminationPolicy.html',{'educationalOffering':education,'policies':policies,'spec':spec,'degree':program})
+    return render(request,'nonDiscriminationPolicy.html',{'advantages':advantages,'educationalOffering':education,'policies':policies,'spec':spec,'degree':program})
 
 
 
 def education(request,id):
+    advantages = advantagesHeader.objects.all()
     spec = specialization.objects.all()
     program = degreeProgram.objects.all()
     education = educationalOffering.objects.get(id=id)
@@ -139,7 +149,8 @@ def education(request,id):
                 'acceptanceCriteria':acceptanceCriteria,
                 'nominationConsideration':nominationConsideratio,
                 'educationalOffering':educationDegree,
-                'spec':spec,'degree':program
+                'spec':spec,'degree':program,
+                'advantages':advantages,
 
             }
             return render(request,'test.html',context)
@@ -162,7 +173,8 @@ def education(request,id):
                 'courses': course,
                 'acceptancePolicies': acceptancePolicies,
                 'educationalOffering':educationDegree,
-                'spec':spec,'degree':program
+                'spec':spec,'degree':program,
+                'advantages':advantages,
             }
             return render(request,'test.html',context)
 
@@ -171,21 +183,24 @@ def education(request,id):
         program = degreeProgram.objects.all()
         context = {
             'educationalOffering':educationDegree,
-            'spec':spec,'degree':program
+            'spec':spec,'degree':program,
+            'advantages':advantages,
         }
         return redirect('/404',context)
 
 
 
 def accreditation(request):
+    advantages = advantagesHeader.objects.all()
     education = educationalOffering.objects.all().order_by('priority')
     para = accreditationParagraph.objects.all()[0]
     lists = accreditationList.objects.all()
     spec = specialization.objects.all()
     program = degreeProgram.objects.all()
-    return render(request,'accreditation.html',{'para':para,'lists':lists,'educationalOffering':education,'spec':spec,'degree':program})
+    return render(request,'accreditation.html',{'advantages':advantages,'para':para,'lists':lists,'educationalOffering':education,'spec':spec,'degree':program})
 
 def describingAccreditations(request):
+    advantages = advantagesHeader.objects.all()
     spec = specialization.objects.all()
     program = degreeProgram.objects.all()
     education = educationalOffering.objects.all().order_by('priority')
@@ -199,25 +214,28 @@ def describingAccreditations(request):
         dictionary['contentList'] = data
         mainList.append(dictionary)
     print(mainList)
-    return render(request,'describingAccreditation.html',{'para':para,'lists':mainList,'educationalOffering':education,'spec':spec,'degree':program})
+    return render(request,'describingAccreditation.html',{'advantages':advantages,'para':para,'lists':mainList,'educationalOffering':education,'spec':spec,'degree':program})
 
 def afterGraduationServicesFunction(request):
+    advantages = advantagesHeader.objects.all()
     spec = specialization.objects.all()
     program = degreeProgram.objects.all()
     education = educationalOffering.objects.all().order_by('priority')
     services = afterGraduationServices.objects.all()
-    return render(request,'afterGraduationServices.html',{'lists':services,'educationalOffering':education,'spec':spec,'degree':program})
+    return render(request,'afterGraduationServices.html',{'advantages':advantages,'lists':services,'educationalOffering':education,'spec':spec,'degree':program})
 
 
 def studentFilesPolicys(request):
+    advantages = advantagesHeader.objects.all()
     spec = specialization.objects.all()
     program = degreeProgram.objects.all()
     data = studentFiles.objects.all()
     education = educationalOffering.objects.all().order_by('priority')
-    return render(request,'studentFilesPolicy.html',{'data':data,'spec':spec,'degree':program,'educationalOffering':education,})
+    return render(request,'studentFilesPolicy.html',{'advantages':advantages,'data':data,'spec':spec,'degree':program,'educationalOffering':education,})
 
 
 def educationModels(request):
+    advantages = advantagesHeader.objects.all()
     spec = specialization.objects.all()
     program = degreeProgram.objects.all()
     education = educationalOffering.objects.all().order_by('priority')
@@ -249,11 +267,13 @@ def educationModels(request):
         'lol' : mainList,
         'educationalOffering':education,
         'spec':spec,'degree':program,
+        'advantages':advantages,
         }
     return render(request,'educationModel.html',context)
 
 
 def gallerys(request):
+    advantages = advantagesHeader.objects.all()
     spec = specialization.objects.all()
     program = degreeProgram.objects.all()
     galler = gallery.objects.all()
@@ -261,16 +281,17 @@ def gallerys(request):
     page = request.GET.get('page')
     galler = paginator.get_page(page)
     ducation = educationalOffering.objects.all().order_by('priority')
-    return render(request,'gallery.html',{'educationalOffering':ducation,'gallery':galler,'spec':spec,'degree':program,})
+    return render(request,'gallery.html',{'advantages':advantages,'educationalOffering':ducation,'gallery':galler,'spec':spec,'degree':program,})
 
 def contact(request):
+    advantages = advantagesHeader.objects.all()
     spec = specialization.objects.all()
     program = degreeProgram.objects.all()
     data = accreditatedCenters.objects.all().order_by('-id')
     centers = academicsCenters.objects.all()
     education = educationalOffering.objects.all().order_by('priority')
     main = mainCampus.objects.all()
-    return render(request,'contact.html',{'spec':spec,'degree':program,'accreditatedCenters':data,'centers':centers,'educationalOffering':education,'main':main})
+    return render(request,'contact.html',{'advantages':advantages,'spec':spec,'degree':program,'accreditatedCenters':data,'centers':centers,'educationalOffering':education,'main':main})
 
 def contactQueryView(request):
     name = request.POST['name']
@@ -299,11 +320,11 @@ def contactQueryView(request):
 def advantagesView(request,id):
     dataHeader = advantagesHeader.objects.get(id=id)
     dataContent = advantagesContent.objects.filter(header = dataHeader)
-    navAdvantages = advantagesHeader.objects.all()
+    advantages = advantagesHeader.objects.all()
     education = educationalOffering.objects.all().order_by('priority')
     program = degreeProgram.objects.all()
     print(dataContent)
-    return render(request,'advantages.html',{'degree':program,'educationalOffering':education,'dataHeader':dataHeader,'dataContent':dataContent,'advantages':navAdvantages})
+    return render(request,'advantages.html',{'degree':program,'educationalOffering':education,'dataHeader':dataHeader,'dataContent':dataContent,'advantages':advantages})
 
 
 def login(request):
@@ -323,7 +344,9 @@ def login(request):
 
 
 def notFound(request):
+    advantages = advantagesHeader.objects.all()
     context={
-        'education':educationalOffering.objects.all().order_by('priority')
+        'education':educationalOffering.objects.all().order_by('priority'),
+        'advantages':advantages,
         }
     return render(request,'404.html',context)
