@@ -51,3 +51,6 @@ admin.site.register(mainCampus)
 
 admin.site.register(requirementHeader)
 admin.site.register(requirementContent)
+
+admin.site.register(advantagesHeader)
+admin.site.register(advantagesContent)

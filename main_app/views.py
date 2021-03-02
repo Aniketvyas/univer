@@ -21,6 +21,7 @@ def index(request):
     academy=academyWorks.objects.all()
     mainList=[]
     mainList1 = []
+    advantages = advantagesHeader.objects.all()
     for i in education:
         dictionaryList , dictionaryTab = {},{}
         prog = degreeProgram.objects.filter(educationalOffering=education)
@@ -33,7 +34,7 @@ def index(request):
         }
         mainList.append(dictionaryList)
         mainList1.append(dictionaryTab)
-    return render(request,'index.html',{'mainList1':mainList1,'mainList':mainList,'spec':spec,'degree':programs,'educationalOffering':education,'academy':academy,'news':news,'images':images,'testimonial':testimonial})
+    return render(request,'index.html',{'advantages':advantages,'mainList1':mainList1,'mainList':mainList,'spec':spec,'degree':programs,'educationalOffering':education,'academy':academy,'news':news,'images':images,'testimonial':testimonial})
 
 
 def visionMission(request):
@@ -175,6 +176,7 @@ def education(request,id):
         return redirect('/404',context)
 
 
+
 def accreditation(request):
     education = educationalOffering.objects.all().order_by('priority')
     para = accreditationParagraph.objects.all()[0]
@@ -224,7 +226,6 @@ def educationModels(request):
     data2 = educationalModalContent.objects.filter(title=category[1])
     data3 = educationalModalContent.objects.filter(title=category[2])
     offers = universityOffering.objects.all()
-    education = educationalOffering.objects.all()
     for i in education:
         course= degreeProgram.objects.filter(educationalOffering = i)
         educationDegree = educationalOffering.objects.all()
@@ -293,6 +294,17 @@ def contactQueryView(request):
     [email],
    )
     return redirect('/')
+
+
+def advantagesView(request,id):
+    dataHeader = advantagesHeader.objects.get(id=id)
+    dataContent = advantagesContent.objects.filter(header = dataHeader)
+    navAdvantages = advantagesHeader.objects.all()
+    education = educationalOffering.objects.all().order_by('priority')
+    program = degreeProgram.objects.all()
+    print(dataContent)
+    return render(request,'advantages.html',{'degree':program,'educationalOffering':education,'dataHeader':dataHeader,'dataContent':dataContent,'advantages':navAdvantages})
+
 
 def login(request):
     if request.method=="POST":

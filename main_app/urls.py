@@ -27,6 +27,7 @@ urlpatterns = [
     path('describingAccreditation',views.describingAccreditations),
     path('afterGraduationServices',views.afterGraduationServicesFunction),
     path('educationModel',views.educationModels),
+    path('advantages/<int:id>',views.advantagesView),
     path('404',views.notFound)
 ]
 
