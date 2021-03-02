@@ -25,7 +25,7 @@ SECRET_KEY = 'o1)4d0&q3l)%=7-%s3)u8ol$!5lbay1!-5zj*&gd2mogzn*01)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://aniketvyas.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -42,7 +42,6 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -76,10 +75,10 @@ WSGI_APPLICATION = 'website.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
-    'default': { 
+    'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'db.sqlite3',
-        
+        'NAME': os.path.join(BASE_DIR,'db.sqlite3'),
+
     }
 }
 
@@ -124,17 +123,17 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS=[
     os.path.join(BASE_DIR,"static")
 ]
-STATIC_ROOT = os.path.join(BASE_DIR , "assests")
+STATIC_ROOT = '/home/aniketvyas/universidadAzteca/static'
 # STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR,'media') 
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
-EMAIL_PORT = 587 
+EMAIL_PORT = 587
 EMAIL_HOST_USER = 'vyasaniket6@gmail.com'
 EMAIL_HOST_PASSWORD = 'Dotnetframework@123'
 

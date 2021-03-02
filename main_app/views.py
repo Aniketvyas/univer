@@ -12,7 +12,7 @@ from django.contrib import messages
 
 
 def index(request):
-    education = educationalOffering.objects.all()
+    education = educationalOffering.objects.all().order_by('priority')
     spec = specialization.objects.all()
     programs = degreeProgram.objects.all()
     news = newsAndUpdates.objects.all()
@@ -37,7 +37,7 @@ def index(request):
 
 
 def visionMission(request):
-    education = educationalOffering.objects.all()
+    education = educationalOffering.objects.all().order_by('priority')
     vision = visionAndMission.objects.get(category="VISION")
     mission = visionAndMission.objects.get(category="MISSION")
     spec = specialization.objects.all()
@@ -45,7 +45,7 @@ def visionMission(request):
     return render(request,'visionMission.html',{'spec':spec,'degree':program,'vision':vision,'mission':mission,'educationalOffering':education,'spec':spec})
 
 def chancellorMessag(request):
-    education = educationalOffering.objects.all()
+    education = educationalOffering.objects.all().order_by('priority')
     chancellorMessages = chancellorMessage.objects.all()
     spec = specialization.objects.all()
     program = degreeProgram.objects.all()
@@ -53,7 +53,7 @@ def chancellorMessag(request):
 
 
 def facultys(request):
-    education = educationalOffering.objects.all()
+    education = educationalOffering.objects.all().order_by('priority')
     f = faculty.objects.all()
     spec = specialization.objects.all()
     program = degreeProgram.objects.all()
@@ -70,7 +70,7 @@ def departments(request):
 
 
 def thesisPolicys(request):
-    education = educationalOffering.objects.all()
+    education = educationalOffering.objects.all().order_by('priority')
     t = thesisPolicy.objects.all()
     spec = specialization.objects.all()
     program = degreeProgram.objects.all()
@@ -78,7 +78,7 @@ def thesisPolicys(request):
 
 
 def gradingSystems(request):
-    education = educationalOffering.objects.all()
+    education = educationalOffering.objects.all().order_by('priority')
     grades = gradeTable.objects.all()
     thesis = thesisEvaluation.objects.all()
     spec = specialization.objects.all()
@@ -88,7 +88,7 @@ def gradingSystems(request):
 def requirement(request):
     spec = specialization.objects.all()
     program = degreeProgram.objects.all()
-    education = educationalOffering.objects.all()
+    education = educationalOffering.objects.all().order_by('priority')
     header = requirementHeader.objects.all()
     mainList=[]
     for i in header:
@@ -102,7 +102,7 @@ def requirement(request):
 def refundPolicy(request):
     spec = specialization.objects.all()
     program = degreeProgram.objects.all()
-    education = educationalOffering.objects.all()
+    education = educationalOffering.objects.all().order_by('priority')
     steps = refundSteps.objects.all()
     charges= refundCharges.objects.all()
     return render(request,'refundPolicy.html',{'educationalOffering':education,'steps':steps,'charges':charges,'spec':spec,'degree':program})
@@ -110,7 +110,7 @@ def refundPolicy(request):
 def nonDiscriminationPolicys(request):
     spec = specialization.objects.all()
     program = degreeProgram.objects.all()
-    education = educationalOffering.objects.all()
+    education = educationalOffering.objects.all().order_by('priority')
     policies = nonDiscriminationPolicy.objects.all()
     return render(request,'nonDiscriminationPolicy.html',{'educationalOffering':education,'policies':policies,'spec':spec,'degree':program})
 
@@ -121,7 +121,7 @@ def education(request,id):
     program = degreeProgram.objects.all()
     education = educationalOffering.objects.get(id=id)
     course= degreeProgram.objects.filter(educationalOffering = education)
-    educationDegree = educationalOffering.objects.all()
+    educationDegree = educationalOffering.objects.all().order_by('priority')
     dictionary,mainList={},[]
     if course:
         if course[0].specializationAvailable:
@@ -139,10 +139,10 @@ def education(request,id):
                 'nominationConsideration':nominationConsideratio,
                 'educationalOffering':educationDegree,
                 'spec':spec,'degree':program
-                
+
             }
             return render(request,'test.html',context)
-            
+
         elif  eligibilityHeader.objects.filter(degreeProgram = course[0]).exists():
             for i in course:
                 eligibilityHead = eligibilityHeader.objects.get(degreeProgram = i)
@@ -164,7 +164,7 @@ def education(request,id):
                 'spec':spec,'degree':program
             }
             return render(request,'test.html',context)
-    
+
     else:
         spec = specialization.objects.all()
         program = degreeProgram.objects.all()
@@ -173,10 +173,10 @@ def education(request,id):
             'spec':spec,'degree':program
         }
         return redirect('/404',context)
-    
+
 
 def accreditation(request):
-    education = educationalOffering.objects.all()
+    education = educationalOffering.objects.all().order_by('priority')
     para = accreditationParagraph.objects.all()[0]
     lists = accreditationList.objects.all()
     spec = specialization.objects.all()
@@ -186,7 +186,7 @@ def accreditation(request):
 def describingAccreditations(request):
     spec = specialization.objects.all()
     program = degreeProgram.objects.all()
-    education = educationalOffering.objects.all()
+    education = educationalOffering.objects.all().order_by('priority')
     mainList=[]
     para = describingAccreditationParagraph.objects.filter(listAvailable=False)[0]
     paraTrue = describingAccreditationParagraph.objects.filter(listAvailable=True)
@@ -194,7 +194,7 @@ def describingAccreditations(request):
         dictionary={}
         data = describingAccreditation.objects.filter(heading=i)
         dictionary['heading'] = data[0].heading
-        dictionary['contentList'] = data     
+        dictionary['contentList'] = data
         mainList.append(dictionary)
     print(mainList)
     return render(request,'describingAccreditation.html',{'para':para,'lists':mainList,'educationalOffering':education,'spec':spec,'degree':program})
@@ -202,7 +202,7 @@ def describingAccreditations(request):
 def afterGraduationServicesFunction(request):
     spec = specialization.objects.all()
     program = degreeProgram.objects.all()
-    education = educationalOffering.objects.all()
+    education = educationalOffering.objects.all().order_by('priority')
     services = afterGraduationServices.objects.all()
     return render(request,'afterGraduationServices.html',{'lists':services,'educationalOffering':education,'spec':spec,'degree':program})
 
@@ -211,14 +211,14 @@ def studentFilesPolicys(request):
     spec = specialization.objects.all()
     program = degreeProgram.objects.all()
     data = studentFiles.objects.all()
-    education = educationalOffering.objects.all()
+    education = educationalOffering.objects.all().order_by('priority')
     return render(request,'studentFilesPolicy.html',{'data':data,'spec':spec,'degree':program,'educationalOffering':education,})
 
 
 def educationModels(request):
     spec = specialization.objects.all()
     program = degreeProgram.objects.all()
-    education = educationalOffering.objects.all()
+    education = educationalOffering.objects.all().order_by('priority')
     category = educationModel.objects.all().order_by('title')
     data1 = educationalModalContent.objects.filter(title=category[0])
     data2 = educationalModalContent.objects.filter(title=category[1])
@@ -259,15 +259,15 @@ def gallerys(request):
     paginator = Paginator(galler,9)
     page = request.GET.get('page')
     galler = paginator.get_page(page)
-    ducation = educationalOffering.objects.all()
+    ducation = educationalOffering.objects.all().order_by('priority')
     return render(request,'gallery.html',{'educationalOffering':ducation,'gallery':galler,'spec':spec,'degree':program,})
 
 def contact(request):
     spec = specialization.objects.all()
     program = degreeProgram.objects.all()
-    data = accreditatedCenters.objects.all()
+    data = accreditatedCenters.objects.all().order_by('-id')
     centers = academicsCenters.objects.all()
-    education = educationalOffering.objects.all()
+    education = educationalOffering.objects.all().order_by('priority')
     main = mainCampus.objects.all()
     return render(request,'contact.html',{'spec':spec,'degree':program,'accreditatedCenters':data,'centers':centers,'educationalOffering':education,'main':main})
 
@@ -311,4 +311,7 @@ def login(request):
 
 
 def notFound(request):
-    return render(request,'404.html')
+    context={
+        'education':educationalOffering.objects.all().order_by('priority')
+        }
+    return render(request,'404.html',context)

@@ -41,21 +41,21 @@ a {
 
 .image {
     object-fit: cover;
-    width: 350px;
-    height: 400px;
+    width: 310px;
+    height: 300px;
 }
 
 @media(max-width:950px) {
     .image {
         width: 300px;
-        height: 350px;
+        height: 250px;
     }
 }
 
 @media(max-width:780px) {
     .image {
         width: 200px;
-        height: 300px;
+        height: 200px;
     }
 }
 
@@ -96,9 +96,7 @@ a {
     text-align: center;
 }
 
-.col-6 {
-    padding: 10px;
-}
+
 
 .card-2 .card-image {
     width: 30px;
@@ -650,7 +648,7 @@ padding: 6px 18px !important;
 
 /* .testimonial_inner:after {
     color: #e79800;
-  
+
     font-size: 48px;
     left: 5px;
     position: absolute;
@@ -660,7 +658,7 @@ padding: 6px 18px !important;
 
 .testimonial_inner:before {
     color: #e79800;
-  
+
     font-size: 48px;
     right: 5px;
     position: absolute;
@@ -680,7 +678,7 @@ padding: 6px 18px !important;
 }
 
 .faa {
-    font-size: 45px;
+    font-size: 35px;
 }
 
 .ftco-testimonial-1 .ftco-testimonial-vcard img {
@@ -696,9 +694,7 @@ padding: 6px 18px !important;
     color: #000
 }
 
-.ftco-testimonial-1 i {
-    padding: 20px;
-}
+
 
 @media(max-width:500px) {
     .ftco-content {
@@ -707,9 +703,6 @@ padding: 6px 18px !important;
     }
     .ftco-content i {
         font-size: 20px;
-        padding: 5px;
-    }
-    .ftco-testimonial-1 i {
         padding: 5px;
     }
     .faa {
@@ -1096,7 +1089,7 @@ padding: 6px 18px !important;
 
  .landing-page {
     margin-top: 8rem;
-   
+
 }
 @media(max-width:992px){
     .landing-page{
@@ -1184,11 +1177,11 @@ html {
 
 .fea:hover {
     background: #1a4395;
-    
+
 }
 .fea1:hover {
     background: #1a4395;
-    
+
 }
 .fea1:hover .count-number {
     color: white;
@@ -1863,7 +1856,7 @@ video {
 }
 
 
-/* 
+/*
 .main-container section.hire-developer .main-content .hire-content .image-container .rotating-images {
     position: relative;
     width: 40em;
@@ -2797,10 +2790,10 @@ section.contact-content .bottom-content .address-content p {
 
 /* .card-3 {
 
-    
+
     box-shadow: 0 0 10px #ccc;
-    
-    
+
+
     transition: 1s ease;
 } */
 
@@ -3401,7 +3394,7 @@ select {
     background-color: white;
     cursor: pointer;
   }
-  
+
   .btn:hover {
     background-color: #ddd;
   } */
@@ -3419,10 +3412,10 @@ select {
     }
 }
 .click-navbar{
-    
+
 }
 .hover-navbar{
-    
+
 }
 
 @media (min-width:1200){

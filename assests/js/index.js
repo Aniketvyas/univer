@@ -1,74 +1,58 @@
-const $dropdown = $(".dropdown");
-const $dropdownToggle = $(".dropdown-toggle");
-const $dropdownMenu = $(".dropdown-menu");
-const showClass = "show";
+// var a = document.getElementsByClassName('dropdown');
+//   a.addEventListener('click',function(){
+//     if (window.innerWidth<1200){
+//       console.log(true); 
+//     var b = document.children('dropdown-menu').style.display="block";
+//     }
+//   });
+// $('dropdown').click(function(){
+//   if(window.innerWidth>1200){
+//     $(".dropdown-toggle").attr("data-toggle", "dropdown");
+//   }
+// })
 
-$(window).on("load resize", function() {
-    if (this.matchMedia("(min-width: 768px)").matches) {
-        $dropdown.hover(
-            function() {
-                const $this = $(this);
-                $this.addClass(showClass);
-                $this.find($dropdownToggle).attr("aria-expanded", "true");
-                $this.find($dropdownMenu).addClass(showClass);
-            },
-            function() {
-                const $this = $(this);
-                $this.removeClass(showClass);
-                $this.find($dropdownToggle).attr("aria-expanded", "false");
-                $this.find($dropdownMenu).removeClass(showClass);
-            }
-        );
-    } else {
-        $dropdown.off("mouseenter mouseleave");
-    }
-});
+$('.dropdown').hover(function() {
+    $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
+  }, function() {
+    $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+  });
+var degreeMenu = document.getElementById('degree');
+        var specializationMenu = document.getElementById('specialization');
+        // console.log(specializationMenu[0].data);
 
-
-
-
-$(document).ready(function() {
-    // Add smooth scrolling to all links
-    $("a").on('click', function(event) {
-
-        // Make sure this.hash has a value before overriding default behavior
-        if (this.hash !== "") {
-            // Prevent default anchor click behavior
-            event.preventDefault();
-
-            // Store hash
-            var hash = this.hash;
-
-            // Using jQuery's animate() method to add smooth page scroll
-            // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-            $('html, body').animate({
-                scrollTop: $(hash).offset().top
-            }, 800, function() {
-
-                // Add hash (#) to URL when done scrolling (default click behavior)
-                window.location.hash = hash;
-            });
-        } // End if
-    });
-});
-
-
-//Get the button:
-mybutton = document.getElementById("myBtn");
-
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() { scrollFunction() };
-
-function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        mybutton.style.display = "block";
-    } else {
-        mybutton.style.display = "none";
-    }
+        $('#degree').on('change', function() {
+            var selected = $(this).val();
+            $("#specialization option").each(function(item){
+                console.log(selected) ;  
+                var element =  $(this) ; 
+                console.log(element.data("tag")) ; 
+                if (element.data("tag") != selected){
+                    element.hide() ; 
+                }else{
+                    element.show();
+                }
+            }) ; 
+            
+            $("#specialization").val($("#expertCat option:visible:first").val());
+            
+        });
+        
+        
+var a = document.getElementsByClassName('dropdown-toggle')
+for(i=0;i<a.length;i++){
+    a[i].addEventListener('click',function(){
+        console.log(i);
+        console.log(a);
+    })
 }
+$(document).click(function (e) {
+    e.stopPropagation();
+    var container = $(".dropDown");
 
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-}
+    //check if the clicked area is dropDown or not
+    if (container.has(e.target).length === 0) {
+        $('.subMenu').hide();
+    }
+})
+
+//  console.log(document.getElementsByClassName('dropdown-toggle')[0].ariaExpanded);

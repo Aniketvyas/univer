@@ -5,7 +5,8 @@ class educationalOffering(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=200)
     description = models.TextField()
-    
+    priority = models.IntegerField(blank=True)
+
     def __str__(self):
         return self.name
 
@@ -51,7 +52,7 @@ class policy(models.Model):
     description = models.TextField()
     def __str__(self):
        return self.name
- 
+
 class policyDetail(models.Model):
     id = models.AutoField(primary_key=True)
     content = models.TextField()
@@ -93,10 +94,10 @@ class newsAndUpdates(models.Model):
     id = models.AutoField(primary_key=True)
     image = models.ImageField()
     heading = models.TextField()
-    date = models.DateTimeField() 
+    date = models.DateTimeField()
 
     def __str__(self):
-        return self.heading  
+        return self.heading
 
 
 class homeSlider(models.Model):
@@ -111,7 +112,7 @@ class gallery(models.Model):
     image = models.ImageField()
     date = models.DateField()
     caption = models.CharField(max_length=500)
-    
+
     def __str__(self):
         return self.caption
 
@@ -129,7 +130,7 @@ class visionAndMission(models.Model):
 
     def __str__(self):
         return self.heading
-    
+
 
 class chancellorMessage(models.Model):
     id = models.AutoField(primary_key=True)
@@ -176,7 +177,7 @@ class describingAccreditation(models.Model):
     listItem = models.TextField()
 
     def __str__(self):
-        return self.listItem 
+        return self.listItem
 
 class accreditationImportance(models.Model):
     id = models.AutoField(primary_key=True)
@@ -193,7 +194,7 @@ class accreditatedCenters(models.Model):
     country = models.CharField(max_length=100,blank=True)
     heading = models.CharField(max_length=100,blank=True)
     contactPerson = models.CharField(max_length=300,blank=True)
-    phoneNumber = models.CharField(max_length=20,blank=True)  
+    phoneNumber = models.CharField(max_length=20,blank=True)
     address = models.TextField(blank=True)
     email = models.EmailField(blank=True)
     website = models.CharField(max_length=50,blank=True)
@@ -284,7 +285,7 @@ class educationModel(models.Model):
 
     def __str__(self):
         return self.title
-   
+
 class educationalModalContent(models.Model):
     id = models.AutoField(primary_key=True)
     title = models.ForeignKey('educationModel',on_delete=models.CASCADE)
